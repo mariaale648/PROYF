@@ -134,7 +134,7 @@ namespace PROYF {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label3->ForeColor = System::Drawing::Color::Red;
 			this->label3->Location = System::Drawing::Point(57, 177);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
