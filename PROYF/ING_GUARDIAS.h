@@ -134,7 +134,7 @@ namespace PROYF {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::Red;
+			this->label3->ForeColor = System::Drawing::Color::Black;
 			this->label3->Location = System::Drawing::Point(57, 177);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
@@ -223,6 +223,7 @@ namespace PROYF {
 			this->groupBox1->TabIndex = 12;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Datos";
+			this->groupBox1->Enter += gcnew System::EventHandler(this, &ING_GUARDIAS::groupBox1_Enter);
 			// 
 			// groupBox2
 			// 
@@ -265,5 +266,7 @@ namespace PROYF {
 #pragma endregion
 	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
