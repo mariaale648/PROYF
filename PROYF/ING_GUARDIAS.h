@@ -108,7 +108,7 @@ namespace PROYF {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->label1->Location = System::Drawing::Point(57, 109);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
@@ -121,7 +121,7 @@ namespace PROYF {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->label2->Location = System::Drawing::Point(57, 144);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
@@ -134,7 +134,11 @@ namespace PROYF {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+<<<<<<< HEAD
 			this->label3->ForeColor = System::Drawing::Color::Black;
+=======
+			this->label3->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+>>>>>>> f60f07df7bf9499f22286606169e9b4251e778c0
 			this->label3->Location = System::Drawing::Point(57, 177);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
@@ -147,7 +151,7 @@ namespace PROYF {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label4->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->label4->Location = System::Drawing::Point(57, 212);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
@@ -160,7 +164,7 @@ namespace PROYF {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label5->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->label5->Location = System::Drawing::Point(57, 245);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
