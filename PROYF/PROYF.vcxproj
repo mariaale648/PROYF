@@ -138,6 +138,7 @@
     <ClInclude Include="Asignar_guardia.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CONEXION.h" />
     <ClInclude Include="Consulta__Inv.h">
       <FileType>CppForm</FileType>
     </ClInclude>
