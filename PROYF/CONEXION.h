@@ -19,7 +19,7 @@ protected:
     void Conectar() {
         st = gcnew SqlConnectionStringBuilder();
         //st->DataSource = "localhost\\SQLEXPRESS";
-        st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS";
+        st->DataSource = "VICTUSMARIO\\SQLEXPRESS";
         st->InitialCatalog = "proteccionTotal";
         st->IntegratedSecurity = true;
         cn = gcnew SqlConnection(Convert::ToString(st));
