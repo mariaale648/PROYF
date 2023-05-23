@@ -382,8 +382,8 @@ namespace PROYF {
 		String^ nombres; String^ apellidos; String^ estado_civil; String^ dpi; String^ direccion; String^ edad; String^ id_puesto;
 
 		cn = gcnew SqlConnection(Convert::ToString(st));
-		ListView^ listView_Guardias = gcnew ListView();
-		String^ sentencia = "SELECT * posicion";
+		ListView^ listView2 = gcnew ListView();
+		String^ sentencia = "SELECT *FROM posicion";
 		SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
 		cn->Open();
 		SqlDataReader^ reader = ejecutar->ExecuteReader();
@@ -404,14 +404,14 @@ namespace PROYF {
 			String^ srtNew6 = gcnew String(edad);
 			String^ srtNew7 = gcnew String(id_puesto);
 
-			ListViewItem^ listView_Guardias = gcnew Windows::Forms::ListViewItem(srtNew1);
-			listView_Guardias->SubItems->Add(srtNew2);
-			listView_Guardias->SubItems->Add(srtNew3);
-			listView_Guardias->SubItems->Add(srtNew4);
-			listView_Guardias->SubItems->Add(srtNew5);
-			listView_Guardias->SubItems->Add(srtNew6);
-			listView_Guardias->SubItems->Add(srtNew7);
-			this->listView_Guardias->Items->Add(listView_Guardias);
+			ListViewItem^ listView2 = gcnew Windows::Forms::ListViewItem(srtNew1);
+			listView2->SubItems->Add(srtNew2);
+			listView2->SubItems->Add(srtNew3);
+			listView2->SubItems->Add(srtNew4);
+			listView2->SubItems->Add(srtNew5);
+			listView2->SubItems->Add(srtNew6);
+			listView2->SubItems->Add(srtNew7);
+			this->listView_Guardias->Items->Add(listView2);
 		}
 		cn->Close();
 	}

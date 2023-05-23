@@ -9,6 +9,8 @@ namespace PROYF {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace Data;
+	using namespace Data::SqlClient;
 
 	/// <summary>
 	/// Resumen de Add_arti
@@ -37,15 +39,21 @@ namespace PROYF {
 		}
 	private: System::Windows::Forms::Label^ label1;
 	protected:
-	private: System::Windows::Forms::Label^ label2;
+
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ ID_art_txt;
+
 	private: System::Windows::Forms::TextBox^ desc_txt;
 	private: System::Windows::Forms::TextBox^ Cantidad_txt;
 	private: System::Windows::Forms::TextBox^ Proveedor_txt;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::TextBox^ Fecha_ingreso;
+	private: System::Windows::Forms::TextBox^ nombre_art_txt;
+
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label2;
 
 	private:
 		/// <summary>
@@ -61,15 +69,19 @@ namespace PROYF {
 		void InitializeComponent(void)
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->ID_art_txt = (gcnew System::Windows::Forms::TextBox());
 			this->desc_txt = (gcnew System::Windows::Forms::TextBox());
 			this->Cantidad_txt = (gcnew System::Windows::Forms::TextBox());
 			this->Proveedor_txt = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->Fecha_ingreso = (gcnew System::Windows::Forms::TextBox());
+			this->nombre_art_txt = (gcnew System::Windows::Forms::TextBox());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -78,25 +90,11 @@ namespace PROYF {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label1->Location = System::Drawing::Point(82, 127);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(40, 63);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(186, 17);
+			this->label1->Size = System::Drawing::Size(159, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Descripción de artículo";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label2->Location = System::Drawing::Point(82, 91);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(88, 17);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"ID artículo";
 			// 
 			// label3
 			// 
@@ -104,10 +102,9 @@ namespace PROYF {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label3->Location = System::Drawing::Point(82, 161);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(40, 122);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(79, 17);
+			this->label3->Size = System::Drawing::Size(65, 13);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Cantidad";
 			// 
@@ -117,33 +114,20 @@ namespace PROYF {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label4->Location = System::Drawing::Point(82, 197);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Location = System::Drawing::Point(40, 90);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(85, 17);
+			this->label4->Size = System::Drawing::Size(45, 13);
 			this->label4->TabIndex = 3;
-			this->label4->Text = L"Proveedor";
-			// 
-			// ID_art_txt
-			// 
-			this->ID_art_txt->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->ID_art_txt->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->ID_art_txt->Location = System::Drawing::Point(301, 89);
-			this->ID_art_txt->Margin = System::Windows::Forms::Padding(4);
-			this->ID_art_txt->Name = L"ID_art_txt";
-			this->ID_art_txt->Size = System::Drawing::Size(132, 25);
-			this->ID_art_txt->TabIndex = 4;
+			this->label4->Text = L"Marca";
 			// 
 			// desc_txt
 			// 
 			this->desc_txt->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->desc_txt->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->desc_txt->Location = System::Drawing::Point(301, 125);
-			this->desc_txt->Margin = System::Windows::Forms::Padding(4);
+			this->desc_txt->Location = System::Drawing::Point(205, 60);
 			this->desc_txt->Name = L"desc_txt";
-			this->desc_txt->Size = System::Drawing::Size(132, 25);
+			this->desc_txt->Size = System::Drawing::Size(100, 22);
 			this->desc_txt->TabIndex = 5;
 			// 
 			// Cantidad_txt
@@ -151,10 +135,9 @@ namespace PROYF {
 			this->Cantidad_txt->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Cantidad_txt->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->Cantidad_txt->Location = System::Drawing::Point(301, 158);
-			this->Cantidad_txt->Margin = System::Windows::Forms::Padding(4);
+			this->Cantidad_txt->Location = System::Drawing::Point(205, 118);
 			this->Cantidad_txt->Name = L"Cantidad_txt";
-			this->Cantidad_txt->Size = System::Drawing::Size(132, 25);
+			this->Cantidad_txt->Size = System::Drawing::Size(100, 22);
 			this->Cantidad_txt->TabIndex = 6;
 			// 
 			// Proveedor_txt
@@ -162,10 +145,9 @@ namespace PROYF {
 			this->Proveedor_txt->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Proveedor_txt->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->Proveedor_txt->Location = System::Drawing::Point(301, 193);
-			this->Proveedor_txt->Margin = System::Windows::Forms::Padding(4);
+			this->Proveedor_txt->Location = System::Drawing::Point(205, 90);
 			this->Proveedor_txt->Name = L"Proveedor_txt";
-			this->Proveedor_txt->Size = System::Drawing::Size(132, 25);
+			this->Proveedor_txt->Size = System::Drawing::Size(100, 22);
 			this->Proveedor_txt->TabIndex = 7;
 			// 
 			// button1
@@ -174,9 +156,10 @@ namespace PROYF {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->button1->Location = System::Drawing::Point(85, 252);
+			this->button1->Location = System::Drawing::Point(137, 202);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(111, 39);
+			this->button1->Size = System::Drawing::Size(83, 32);
 			this->button1->TabIndex = 8;
 			this->button1->Text = L"Agregar";
 			this->button1->UseVisualStyleBackColor = false;
@@ -184,50 +167,104 @@ namespace PROYF {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->button1);
+			this->groupBox1->Controls->Add(this->Fecha_ingreso);
+			this->groupBox1->Controls->Add(this->nombre_art_txt);
+			this->groupBox1->Controls->Add(this->label6);
+			this->groupBox1->Controls->Add(this->label5);
+			this->groupBox1->Controls->Add(this->label2);
+			this->groupBox1->Controls->Add(this->label1);
+			this->groupBox1->Controls->Add(this->Proveedor_txt);
+			this->groupBox1->Controls->Add(this->desc_txt);
+			this->groupBox1->Controls->Add(this->label4);
+			this->groupBox1->Controls->Add(this->Cantidad_txt);
+			this->groupBox1->Controls->Add(this->label3);
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->groupBox1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->groupBox1->Location = System::Drawing::Point(28, 30);
+			this->groupBox1->Location = System::Drawing::Point(21, 24);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(565, 364);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(2);
+			this->groupBox1->Size = System::Drawing::Size(424, 296);
 			this->groupBox1->TabIndex = 9;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Agregar articulo";
 			// 
+			// Fecha_ingreso
+			// 
+			this->Fecha_ingreso->Location = System::Drawing::Point(205, 148);
+			this->Fecha_ingreso->Name = L"Fecha_ingreso";
+			this->Fecha_ingreso->Size = System::Drawing::Size(100, 22);
+			this->Fecha_ingreso->TabIndex = 12;
+			// 
+			// nombre_art_txt
+			// 
+			this->nombre_art_txt->Location = System::Drawing::Point(205, 29);
+			this->nombre_art_txt->Name = L"nombre_art_txt";
+			this->nombre_art_txt->Size = System::Drawing::Size(100, 22);
+			this->nombre_art_txt->TabIndex = 11;
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->label6->Location = System::Drawing::Point(40, 148);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(116, 13);
+			this->label6->TabIndex = 10;
+			this->label6->Text = L"Fecha de ingreso";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->label5->Location = System::Drawing::Point(40, 38);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(113, 13);
+			this->label5->TabIndex = 9;
+			this->label5->Text = L"Nombre artículo";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(40, 63);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(0, 15);
+			this->label2->TabIndex = 8;
+			// 
 			// Add_arti
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->ClientSize = System::Drawing::Size(624, 423);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->Proveedor_txt);
-			this->Controls->Add(this->Cantidad_txt);
-			this->Controls->Add(this->desc_txt);
-			this->Controls->Add(this->ID_art_txt);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->ClientSize = System::Drawing::Size(468, 344);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Add_arti";
 			this->Text = L"Add_arti";
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Conexion cldatos;
 		cldatos.Insert_Art(
-
-			Convert::ToInt64(ID_art_txt->Text),
+			nombre_art_txt->Text,
 			desc_txt->Text,
+			Proveedor_txt->Text,
 			Convert::ToInt64(Cantidad_txt->Text),
-			Proveedor_txt->Text);
+			Fecha_ingreso->Text
+			);
 			MessageBox::Show("Registro guardado exitosamente");
 
 	}
+private: System::Void ID_art_txt_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

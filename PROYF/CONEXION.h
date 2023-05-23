@@ -42,13 +42,15 @@ public:
         cn->Close();
     }
 
-    void Insert_Art(int id_articulo, String^ desc_art, int cantidad, String^ proveedor) {
-        String^ sentencia = "Insert into posicion values(@id_articulo, @desc_art, @cantidad, @proveedor)";
+    void Insert_Art(String^ nombre_art, String^descripcion, String^ marca, int cantidad,String^fecha_ingreso) {
+        Conectar();
+        String^ sentencia = "Insert into almacen values(@nombre_art, @descripcion, @marca, @cantidad, @fecha_ingreso)";
         SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
-        ejecutar->Parameters->AddWithValue("@id_articulo", id_articulo);
-        ejecutar->Parameters->AddWithValue("@desc_art", desc_art);
+        ejecutar->Parameters->AddWithValue("@nombre_art", nombre_art);
+        ejecutar->Parameters->AddWithValue("@descripcion", descripcion);
+        ejecutar->Parameters->AddWithValue("@marca", marca);
         ejecutar->Parameters->AddWithValue("@cantidad", cantidad);
-        ejecutar->Parameters->AddWithValue("@proveedor", proveedor);
+        ejecutar->Parameters->AddWithValue("@fecha_ingreso", fecha_ingreso);
         cn->Open();
         ejecutar->ExecuteNonQuery();
         cn->Close();
