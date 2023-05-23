@@ -4,6 +4,7 @@
 #include "Add_arti.h"
 #include"Asignar_art.h"
 #include "Asignar_guardia.h"
+#include "cliente.h"
 
 namespace PROYF {
 
@@ -54,6 +55,9 @@ namespace PROYF {
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::Button^ Add_cons_guardia;
 	private: System::Windows::Forms::Button^ Inv_almacenes;
+	private: System::Windows::Forms::Button^ Distrito_button;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ Cliente_button;
 
 
 
@@ -82,6 +86,9 @@ namespace PROYF {
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->Inv_almacenes = (gcnew System::Windows::Forms::Button());
 			this->Add_cons_guardia = (gcnew System::Windows::Forms::Button());
+			this->Cliente_button = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->Distrito_button = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
@@ -103,7 +110,7 @@ namespace PROYF {
 			this->Agregar_inv_button->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Agregar_inv_button->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->Agregar_inv_button->Location = System::Drawing::Point(154, 327);
+			this->Agregar_inv_button->Location = System::Drawing::Point(37, 170);
 			this->Agregar_inv_button->Name = L"Agregar_inv_button";
 			this->Agregar_inv_button->Size = System::Drawing::Size(172, 58);
 			this->Agregar_inv_button->TabIndex = 5;
@@ -117,7 +124,7 @@ namespace PROYF {
 			this->Asignar_art_button->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Asignar_art_button->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->Asignar_art_button->Location = System::Drawing::Point(244, 263);
+			this->Asignar_art_button->Location = System::Drawing::Point(393, 234);
 			this->Asignar_art_button->Name = L"Asignar_art_button";
 			this->Asignar_art_button->Size = System::Drawing::Size(172, 58);
 			this->Asignar_art_button->TabIndex = 6;
@@ -131,7 +138,7 @@ namespace PROYF {
 			this->Asignar_guardias_button->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Asignar_guardias_button->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->Asignar_guardias_button->Location = System::Drawing::Point(422, 263);
+			this->Asignar_guardias_button->Location = System::Drawing::Point(37, 298);
 			this->Asignar_guardias_button->Name = L"Asignar_guardias_button";
 			this->Asignar_guardias_button->Size = System::Drawing::Size(172, 58);
 			this->Asignar_guardias_button->TabIndex = 7;
@@ -141,8 +148,14 @@ namespace PROYF {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->Distrito_button);
+			this->groupBox1->Controls->Add(this->button1);
+			this->groupBox1->Controls->Add(this->Cliente_button);
+			this->groupBox1->Controls->Add(this->Asignar_guardias_button);
 			this->groupBox1->Controls->Add(this->Inv_almacenes);
+			this->groupBox1->Controls->Add(this->Asignar_art_button);
 			this->groupBox1->Controls->Add(this->Add_cons_guardia);
+			this->groupBox1->Controls->Add(this->Agregar_inv_button);
 			this->groupBox1->Location = System::Drawing::Point(29, 29);
 			this->groupBox1->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox1->Name = L"groupBox1";
@@ -158,7 +171,7 @@ namespace PROYF {
 			this->Inv_almacenes->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Inv_almacenes->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->Inv_almacenes->Location = System::Drawing::Point(37, 234);
+			this->Inv_almacenes->Location = System::Drawing::Point(215, 234);
 			this->Inv_almacenes->Name = L"Inv_almacenes";
 			this->Inv_almacenes->Size = System::Drawing::Size(172, 58);
 			this->Inv_almacenes->TabIndex = 10;
@@ -172,7 +185,7 @@ namespace PROYF {
 			this->Add_cons_guardia->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Add_cons_guardia->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->Add_cons_guardia->Location = System::Drawing::Point(307, 298);
+			this->Add_cons_guardia->Location = System::Drawing::Point(215, 170);
 			this->Add_cons_guardia->Name = L"Add_cons_guardia";
 			this->Add_cons_guardia->Size = System::Drawing::Size(172, 58);
 			this->Add_cons_guardia->TabIndex = 10;
@@ -180,15 +193,40 @@ namespace PROYF {
 			this->Add_cons_guardia->UseVisualStyleBackColor = false;
 			this->Add_cons_guardia->Click += gcnew System::EventHandler(this, &PRINC::Add_cons_guardia_Click);
 			// 
+			// Cliente_button
+			// 
+			this->Cliente_button->Location = System::Drawing::Point(393, 170);
+			this->Cliente_button->Name = L"Cliente_button";
+			this->Cliente_button->Size = System::Drawing::Size(172, 58);
+			this->Cliente_button->TabIndex = 11;
+			this->Cliente_button->Text = L"Agregar cliente";
+			this->Cliente_button->UseVisualStyleBackColor = true;
+			this->Cliente_button->Click += gcnew System::EventHandler(this, &PRINC::Cliente_button_Click);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(393, 298);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(172, 58);
+			this->button1->TabIndex = 12;
+			this->button1->Text = L"Crear puesto";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// Distrito_button
+			// 
+			this->Distrito_button->Location = System::Drawing::Point(37, 234);
+			this->Distrito_button->Name = L"Distrito_button";
+			this->Distrito_button->Size = System::Drawing::Size(172, 58);
+			this->Distrito_button->TabIndex = 13;
+			this->Distrito_button->Text = L"Agregar distrito";
+			this->Distrito_button->UseVisualStyleBackColor = true;
+			// 
 			// PRINC
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlDark;
 			this->ClientSize = System::Drawing::Size(676, 472);
-			this->Controls->Add(this->Asignar_guardias_button);
-			this->Controls->Add(this->Asignar_art_button);
-			this->Controls->Add(this->Agregar_inv_button);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"PRINC";
@@ -227,5 +265,9 @@ private: System::Void Inv_almacenes_Click(System::Object^ sender, System::EventA
 	f->Show();
 }
 
+private: System::Void Cliente_button_Click(System::Object^ sender, System::EventArgs^ e) {
+	cliente^ f = gcnew cliente();
+	f->Show();
+}
 };
 }

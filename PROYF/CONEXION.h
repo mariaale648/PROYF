@@ -19,7 +19,8 @@ protected:
     void Conectar() {
         st = gcnew SqlConnectionStringBuilder();
         //st->DataSource = "localhost\\SQLEXPRESS";
-        st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20";
+        //st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20";(ANTONY)
+        st->DataSource = "DESKTOP - 8UHRS07\\SQLEXPRESS";//(KEVIN)
         st->InitialCatalog = "proteccionTotal";
         st->IntegratedSecurity = true;
         cn = gcnew SqlConnection(Convert::ToString(st));
@@ -51,6 +52,16 @@ public:
         ejecutar->Parameters->AddWithValue("@marca", marca);
         ejecutar->Parameters->AddWithValue("@cantidad", cantidad);
         ejecutar->Parameters->AddWithValue("@fecha_ingreso", fecha_ingreso);
+        cn->Open();
+        ejecutar->ExecuteNonQuery();
+        cn->Close();
+    }
+
+    void Insert_cliente(String^ nombre_empresa) {
+        Conectar();
+        String^ sentencia = "Insert into cliente values(@nombre_empresa)";
+        SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
+        ejecutar->Parameters->AddWithValue("@nombre_empresa", nombre_empresa);
         cn->Open();
         ejecutar->ExecuteNonQuery();
         cn->Close();
