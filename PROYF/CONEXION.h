@@ -42,5 +42,16 @@ public:
         cn->Close();
     }
 
+    void Insert_Art(int id_articulo, String^ desc_art, int cantidad, String^ proveedor) {
+        String^ sentencia = "Insert into posicion values(@id_articulo, @desc_art, @cantidad, @proveedor)";
+        SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
+        ejecutar->Parameters->AddWithValue("@id_articulo", id_articulo);
+        ejecutar->Parameters->AddWithValue("@desc_art", desc_art);
+        ejecutar->Parameters->AddWithValue("@cantidad", cantidad);
+        ejecutar->Parameters->AddWithValue("@proveedor", proveedor);
+        cn->Open();
+        ejecutar->ExecuteNonQuery();
+        cn->Close();
+    }
 
 };

@@ -1,4 +1,5 @@
 #pragma once
+#include "CONEXION.h"
 
 namespace PROYF {
 
@@ -129,7 +130,7 @@ namespace PROYF {
 				static_cast<System::Byte>(0)));
 			this->ID_art_txt->ForeColor = System::Drawing::SystemColors::WindowFrame;
 			this->ID_art_txt->Location = System::Drawing::Point(301, 89);
-			this->ID_art_txt->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ID_art_txt->Margin = System::Windows::Forms::Padding(4);
 			this->ID_art_txt->Name = L"ID_art_txt";
 			this->ID_art_txt->Size = System::Drawing::Size(132, 25);
 			this->ID_art_txt->TabIndex = 4;
@@ -140,7 +141,7 @@ namespace PROYF {
 				static_cast<System::Byte>(0)));
 			this->desc_txt->ForeColor = System::Drawing::SystemColors::WindowFrame;
 			this->desc_txt->Location = System::Drawing::Point(301, 125);
-			this->desc_txt->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->desc_txt->Margin = System::Windows::Forms::Padding(4);
 			this->desc_txt->Name = L"desc_txt";
 			this->desc_txt->Size = System::Drawing::Size(132, 25);
 			this->desc_txt->TabIndex = 5;
@@ -151,7 +152,7 @@ namespace PROYF {
 				static_cast<System::Byte>(0)));
 			this->Cantidad_txt->ForeColor = System::Drawing::SystemColors::WindowFrame;
 			this->Cantidad_txt->Location = System::Drawing::Point(301, 158);
-			this->Cantidad_txt->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Cantidad_txt->Margin = System::Windows::Forms::Padding(4);
 			this->Cantidad_txt->Name = L"Cantidad_txt";
 			this->Cantidad_txt->Size = System::Drawing::Size(132, 25);
 			this->Cantidad_txt->TabIndex = 6;
@@ -162,7 +163,7 @@ namespace PROYF {
 				static_cast<System::Byte>(0)));
 			this->Proveedor_txt->ForeColor = System::Drawing::SystemColors::WindowFrame;
 			this->Proveedor_txt->Location = System::Drawing::Point(301, 193);
-			this->Proveedor_txt->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Proveedor_txt->Margin = System::Windows::Forms::Padding(4);
 			this->Proveedor_txt->Name = L"Proveedor_txt";
 			this->Proveedor_txt->Size = System::Drawing::Size(132, 25);
 			this->Proveedor_txt->TabIndex = 7;
@@ -179,6 +180,7 @@ namespace PROYF {
 			this->button1->TabIndex = 8;
 			this->button1->Text = L"Agregar";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &Add_arti::button1_Click);
 			// 
 			// groupBox1
 			// 
@@ -208,7 +210,7 @@ namespace PROYF {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Add_arti";
 			this->Text = L"Add_arti";
 			this->ResumeLayout(false);
@@ -216,5 +218,16 @@ namespace PROYF {
 
 		}
 #pragma endregion
-	};
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		Conexion cldatos;
+		cldatos.Insert_Art(
+
+			Convert::ToInt64(ID_art_txt->Text),
+			desc_txt->Text,
+			Convert::ToInt64(Cantidad_txt->Text),
+			Proveedor_txt->Text);
+			MessageBox::Show("Registro guardado exitosamente");
+
+	}
+};
 }
