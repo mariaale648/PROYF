@@ -103,10 +103,9 @@ namespace PROYF {
 			this->NOMBRES_TXT->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NOMBRES_TXT->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->NOMBRES_TXT->Location = System::Drawing::Point(163, 37);
-			this->NOMBRES_TXT->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->NOMBRES_TXT->Location = System::Drawing::Point(122, 30);
 			this->NOMBRES_TXT->Name = L"NOMBRES_TXT";
-			this->NOMBRES_TXT->Size = System::Drawing::Size(191, 25);
+			this->NOMBRES_TXT->Size = System::Drawing::Size(144, 22);
 			this->NOMBRES_TXT->TabIndex = 0;
 			this->NOMBRES_TXT->TextChanged += gcnew System::EventHandler(this, &ING_GUARDIAS::NOMBRES_TXT_TextChanged);
 			// 
@@ -115,10 +114,9 @@ namespace PROYF {
 			this->APELLIDOS_TXT->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->APELLIDOS_TXT->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->APELLIDOS_TXT->Location = System::Drawing::Point(163, 71);
-			this->APELLIDOS_TXT->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->APELLIDOS_TXT->Location = System::Drawing::Point(122, 58);
 			this->APELLIDOS_TXT->Name = L"APELLIDOS_TXT";
-			this->APELLIDOS_TXT->Size = System::Drawing::Size(191, 25);
+			this->APELLIDOS_TXT->Size = System::Drawing::Size(144, 22);
 			this->APELLIDOS_TXT->TabIndex = 1;
 			// 
 			// label1
@@ -127,10 +125,9 @@ namespace PROYF {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label1->Location = System::Drawing::Point(25, 42);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(19, 34);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(81, 17);
+			this->label1->Size = System::Drawing::Size(71, 13);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"NOMBRES";
 			// 
@@ -140,10 +137,9 @@ namespace PROYF {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label2->Location = System::Drawing::Point(25, 71);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(19, 58);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(89, 17);
+			this->label2->Size = System::Drawing::Size(77, 13);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"APELLIDOS";
 			// 
@@ -153,10 +149,9 @@ namespace PROYF {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label3->Location = System::Drawing::Point(25, 214);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(19, 174);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(52, 17);
+			this->label3->Size = System::Drawing::Size(44, 13);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"EDAD";
 			// 
@@ -166,10 +161,9 @@ namespace PROYF {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label4->Location = System::Drawing::Point(25, 111);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Location = System::Drawing::Point(19, 90);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(114, 17);
+			this->label4->Size = System::Drawing::Size(97, 13);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"ESTADO CIVIL";
 			// 
@@ -179,10 +173,9 @@ namespace PROYF {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label5->Location = System::Drawing::Point(25, 145);
-			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label5->Location = System::Drawing::Point(19, 118);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(32, 17);
+			this->label5->Size = System::Drawing::Size(28, 13);
 			this->label5->TabIndex = 6;
 			this->label5->Text = L"DPI";
 			this->label5->Click += gcnew System::EventHandler(this, &ING_GUARDIAS::label5_Click);
@@ -192,10 +185,9 @@ namespace PROYF {
 			this->EDAD_TXT->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EDAD_TXT->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->EDAD_TXT->Location = System::Drawing::Point(163, 214);
-			this->EDAD_TXT->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->EDAD_TXT->Location = System::Drawing::Point(122, 174);
 			this->EDAD_TXT->Name = L"EDAD_TXT";
-			this->EDAD_TXT->Size = System::Drawing::Size(191, 25);
+			this->EDAD_TXT->Size = System::Drawing::Size(144, 22);
 			this->EDAD_TXT->TabIndex = 7;
 			// 
 			// ECIVL_TXT
@@ -203,10 +195,9 @@ namespace PROYF {
 			this->ECIVL_TXT->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ECIVL_TXT->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->ECIVL_TXT->Location = System::Drawing::Point(163, 111);
-			this->ECIVL_TXT->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ECIVL_TXT->Location = System::Drawing::Point(122, 90);
 			this->ECIVL_TXT->Name = L"ECIVL_TXT";
-			this->ECIVL_TXT->Size = System::Drawing::Size(191, 25);
+			this->ECIVL_TXT->Size = System::Drawing::Size(144, 22);
 			this->ECIVL_TXT->TabIndex = 8;
 			// 
 			// DPI_TXT
@@ -214,21 +205,20 @@ namespace PROYF {
 			this->DPI_TXT->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->DPI_TXT->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->DPI_TXT->Location = System::Drawing::Point(163, 145);
-			this->DPI_TXT->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->DPI_TXT->Location = System::Drawing::Point(122, 118);
 			this->DPI_TXT->Name = L"DPI_TXT";
-			this->DPI_TXT->Size = System::Drawing::Size(191, 25);
+			this->DPI_TXT->Size = System::Drawing::Size(144, 22);
 			this->DPI_TXT->TabIndex = 9;
 			// 
 			// listView_Guardias
 			// 
 			this->listView_Guardias->HideSelection = false;
-			this->listView_Guardias->Location = System::Drawing::Point(20, 69);
-			this->listView_Guardias->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->listView_Guardias->Location = System::Drawing::Point(15, 56);
 			this->listView_Guardias->Name = L"listView_Guardias";
-			this->listView_Guardias->Size = System::Drawing::Size(557, 211);
+			this->listView_Guardias->Size = System::Drawing::Size(419, 172);
 			this->listView_Guardias->TabIndex = 10;
 			this->listView_Guardias->UseCompatibleStateImageBehavior = false;
+			this->listView_Guardias->SelectedIndexChanged += gcnew System::EventHandler(this, &ING_GUARDIAS::listView_Guardias_SelectedIndexChanged);
 			// 
 			// groupBox1
 			// 
@@ -250,11 +240,11 @@ namespace PROYF {
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->groupBox1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->groupBox1->Location = System::Drawing::Point(32, 14);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox1->Location = System::Drawing::Point(24, 11);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox1->Size = System::Drawing::Size(403, 356);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox1->Size = System::Drawing::Size(302, 289);
 			this->groupBox1->TabIndex = 12;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Datos";
@@ -262,10 +252,9 @@ namespace PROYF {
 			// 
 			// idPuesto_TXT
 			// 
-			this->idPuesto_TXT->Location = System::Drawing::Point(163, 254);
-			this->idPuesto_TXT->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->idPuesto_TXT->Location = System::Drawing::Point(122, 206);
 			this->idPuesto_TXT->Name = L"idPuesto_TXT";
-			this->idPuesto_TXT->Size = System::Drawing::Size(191, 25);
+			this->idPuesto_TXT->Size = System::Drawing::Size(144, 22);
 			this->idPuesto_TXT->TabIndex = 13;
 			// 
 			// label7
@@ -274,19 +263,17 @@ namespace PROYF {
 			this->label7->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label7->Location = System::Drawing::Point(25, 254);
-			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label7->Location = System::Drawing::Point(19, 206);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(82, 17);
+			this->label7->Size = System::Drawing::Size(72, 13);
 			this->label7->TabIndex = 12;
 			this->label7->Text = L"id_puesto";
 			// 
 			// Direc_TXT
 			// 
-			this->Direc_TXT->Location = System::Drawing::Point(163, 180);
-			this->Direc_TXT->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Direc_TXT->Location = System::Drawing::Point(122, 146);
 			this->Direc_TXT->Name = L"Direc_TXT";
-			this->Direc_TXT->Size = System::Drawing::Size(191, 25);
+			this->Direc_TXT->Size = System::Drawing::Size(144, 22);
 			this->Direc_TXT->TabIndex = 11;
 			// 
 			// label6
@@ -294,19 +281,17 @@ namespace PROYF {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(25, 180);
-			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label6->Location = System::Drawing::Point(19, 146);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(80, 17);
+			this->label6->Size = System::Drawing::Size(69, 13);
 			this->label6->TabIndex = 10;
 			this->label6->Text = L"Dirección";
 			// 
 			// Guardar_button
 			// 
-			this->Guardar_button->Location = System::Drawing::Point(204, 309);
-			this->Guardar_button->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Guardar_button->Location = System::Drawing::Point(153, 251);
 			this->Guardar_button->Name = L"Guardar_button";
-			this->Guardar_button->Size = System::Drawing::Size(100, 28);
+			this->Guardar_button->Size = System::Drawing::Size(75, 23);
 			this->Guardar_button->TabIndex = 0;
 			this->Guardar_button->Text = L"Guardar";
 			this->Guardar_button->UseVisualStyleBackColor = true;
@@ -319,21 +304,20 @@ namespace PROYF {
 			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->groupBox2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->groupBox2->Location = System::Drawing::Point(469, 55);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox2->Location = System::Drawing::Point(352, 45);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox2->Size = System::Drawing::Size(613, 314);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox2->Size = System::Drawing::Size(460, 255);
 			this->groupBox2->TabIndex = 13;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Informacion Guardias";
 			// 
 			// CONSULTAR_G
 			// 
-			this->CONSULTAR_G->Location = System::Drawing::Point(237, 28);
-			this->CONSULTAR_G->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->CONSULTAR_G->Location = System::Drawing::Point(178, 23);
 			this->CONSULTAR_G->Name = L"CONSULTAR_G";
-			this->CONSULTAR_G->Size = System::Drawing::Size(121, 28);
+			this->CONSULTAR_G->Size = System::Drawing::Size(91, 23);
 			this->CONSULTAR_G->TabIndex = 11;
 			this->CONSULTAR_G->Text = L"CONSULTAR";
 			this->CONSULTAR_G->UseVisualStyleBackColor = true;
@@ -341,13 +325,12 @@ namespace PROYF {
 			// 
 			// ING_GUARDIAS
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->ClientSize = System::Drawing::Size(1120, 394);
+			this->ClientSize = System::Drawing::Size(840, 320);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->groupBox2);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"ING_GUARDIAS";
 			this->Text = L"ING_GUARDIAS";
 			this->groupBox1->ResumeLayout(false);
@@ -417,6 +400,8 @@ namespace PROYF {
 	}
 	private: System::Void NOMBRES_TXT_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void listView_Guardias_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 };
 
