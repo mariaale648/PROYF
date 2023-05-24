@@ -10,25 +10,16 @@ using namespace System::Drawing;
 using namespace Data;
 using namespace Data::SqlClient;
 
-ref class Conexion
-{
+ref class Conexion {
     SqlConnection^ cn;
     SqlConnectionStringBuilder^ st;
 
 protected:
     void Conectar() {
-        st = gcnew SqlConnectionStringBuilder();
-        //st->DataSource = "localhost\\SQLEXPRESS";
-<<<<<<< HEAD
-        // st->DataSource = " "; // KEVIN
-        // st->DataSource = " "; // ALE
-        st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // ANTONY
-=======
-        //st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20";(ANTONY)
-        st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS";//(KEVIN)
-        //st->DataSource = "VICTUSMARIO\\SQLEXPRESS";
-        //st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20";
->>>>>>> f030852897b7c5854ed0b3be02273f0cfe291fe1
+        st = gcnew SqlConnectionStringBuilder();        
+        st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+        //st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+        //st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
         st->InitialCatalog = "proteccionTotal";
         st->IntegratedSecurity = true;
         cn = gcnew SqlConnection(Convert::ToString(st));
@@ -87,5 +78,4 @@ public:
         ejecutar->ExecuteNonQuery();
         cn->Close();
     }
-
 };

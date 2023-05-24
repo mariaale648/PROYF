@@ -61,6 +61,16 @@ namespace PROYF {
 	private: System::Windows::Forms::TextBox^ idPuesto_TXT;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Button^ CONSULTAR_G;
+	private: System::Windows::Forms::ColumnHeader^ nombres;
+	private: System::Windows::Forms::ColumnHeader^ apellidos;
+	private: System::Windows::Forms::ColumnHeader^ estado_civil;
+
+
+
+	private: System::Windows::Forms::ColumnHeader^ dpi;
+	private: System::Windows::Forms::ColumnHeader^ direccion;
+	private: System::Windows::Forms::ColumnHeader^ edad;
+	private: System::Windows::Forms::ColumnHeader^ id_puesto;
 
 	private:
 		/// <summary>
@@ -86,6 +96,13 @@ namespace PROYF {
 			this->ECIVL_TXT = (gcnew System::Windows::Forms::TextBox());
 			this->DPI_TXT = (gcnew System::Windows::Forms::TextBox());
 			this->listView_Guardias = (gcnew System::Windows::Forms::ListView());
+			this->nombres = (gcnew System::Windows::Forms::ColumnHeader());
+			this->apellidos = (gcnew System::Windows::Forms::ColumnHeader());
+			this->estado_civil = (gcnew System::Windows::Forms::ColumnHeader());
+			this->dpi = (gcnew System::Windows::Forms::ColumnHeader());
+			this->direccion = (gcnew System::Windows::Forms::ColumnHeader());
+			this->edad = (gcnew System::Windows::Forms::ColumnHeader());
+			this->id_puesto = (gcnew System::Windows::Forms::ColumnHeader());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->idPuesto_TXT = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
@@ -103,9 +120,10 @@ namespace PROYF {
 			this->NOMBRES_TXT->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NOMBRES_TXT->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->NOMBRES_TXT->Location = System::Drawing::Point(122, 30);
+			this->NOMBRES_TXT->Location = System::Drawing::Point(163, 37);
+			this->NOMBRES_TXT->Margin = System::Windows::Forms::Padding(4);
 			this->NOMBRES_TXT->Name = L"NOMBRES_TXT";
-			this->NOMBRES_TXT->Size = System::Drawing::Size(144, 22);
+			this->NOMBRES_TXT->Size = System::Drawing::Size(191, 25);
 			this->NOMBRES_TXT->TabIndex = 0;
 			this->NOMBRES_TXT->TextChanged += gcnew System::EventHandler(this, &ING_GUARDIAS::NOMBRES_TXT_TextChanged);
 			// 
@@ -114,9 +132,10 @@ namespace PROYF {
 			this->APELLIDOS_TXT->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->APELLIDOS_TXT->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->APELLIDOS_TXT->Location = System::Drawing::Point(122, 58);
+			this->APELLIDOS_TXT->Location = System::Drawing::Point(163, 71);
+			this->APELLIDOS_TXT->Margin = System::Windows::Forms::Padding(4);
 			this->APELLIDOS_TXT->Name = L"APELLIDOS_TXT";
-			this->APELLIDOS_TXT->Size = System::Drawing::Size(144, 22);
+			this->APELLIDOS_TXT->Size = System::Drawing::Size(191, 25);
 			this->APELLIDOS_TXT->TabIndex = 1;
 			// 
 			// label1
@@ -125,9 +144,10 @@ namespace PROYF {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label1->Location = System::Drawing::Point(19, 34);
+			this->label1->Location = System::Drawing::Point(25, 42);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(71, 13);
+			this->label1->Size = System::Drawing::Size(81, 17);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"NOMBRES";
 			// 
@@ -137,9 +157,10 @@ namespace PROYF {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label2->Location = System::Drawing::Point(19, 58);
+			this->label2->Location = System::Drawing::Point(25, 71);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(77, 13);
+			this->label2->Size = System::Drawing::Size(89, 17);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"APELLIDOS";
 			// 
@@ -149,9 +170,10 @@ namespace PROYF {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label3->Location = System::Drawing::Point(19, 174);
+			this->label3->Location = System::Drawing::Point(25, 214);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(44, 13);
+			this->label3->Size = System::Drawing::Size(52, 17);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"EDAD";
 			// 
@@ -161,9 +183,10 @@ namespace PROYF {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label4->Location = System::Drawing::Point(19, 90);
+			this->label4->Location = System::Drawing::Point(25, 111);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(97, 13);
+			this->label4->Size = System::Drawing::Size(114, 17);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"ESTADO CIVIL";
 			// 
@@ -173,9 +196,10 @@ namespace PROYF {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label5->Location = System::Drawing::Point(19, 118);
+			this->label5->Location = System::Drawing::Point(25, 145);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(28, 13);
+			this->label5->Size = System::Drawing::Size(32, 17);
 			this->label5->TabIndex = 6;
 			this->label5->Text = L"DPI";
 			this->label5->Click += gcnew System::EventHandler(this, &ING_GUARDIAS::label5_Click);
@@ -185,9 +209,10 @@ namespace PROYF {
 			this->EDAD_TXT->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EDAD_TXT->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->EDAD_TXT->Location = System::Drawing::Point(122, 174);
+			this->EDAD_TXT->Location = System::Drawing::Point(163, 214);
+			this->EDAD_TXT->Margin = System::Windows::Forms::Padding(4);
 			this->EDAD_TXT->Name = L"EDAD_TXT";
-			this->EDAD_TXT->Size = System::Drawing::Size(144, 22);
+			this->EDAD_TXT->Size = System::Drawing::Size(191, 25);
 			this->EDAD_TXT->TabIndex = 7;
 			// 
 			// ECIVL_TXT
@@ -195,9 +220,10 @@ namespace PROYF {
 			this->ECIVL_TXT->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ECIVL_TXT->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->ECIVL_TXT->Location = System::Drawing::Point(122, 90);
+			this->ECIVL_TXT->Location = System::Drawing::Point(163, 111);
+			this->ECIVL_TXT->Margin = System::Windows::Forms::Padding(4);
 			this->ECIVL_TXT->Name = L"ECIVL_TXT";
-			this->ECIVL_TXT->Size = System::Drawing::Size(144, 22);
+			this->ECIVL_TXT->Size = System::Drawing::Size(191, 25);
 			this->ECIVL_TXT->TabIndex = 8;
 			// 
 			// DPI_TXT
@@ -205,20 +231,62 @@ namespace PROYF {
 			this->DPI_TXT->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->DPI_TXT->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->DPI_TXT->Location = System::Drawing::Point(122, 118);
+			this->DPI_TXT->Location = System::Drawing::Point(163, 145);
+			this->DPI_TXT->Margin = System::Windows::Forms::Padding(4);
 			this->DPI_TXT->Name = L"DPI_TXT";
-			this->DPI_TXT->Size = System::Drawing::Size(144, 22);
+			this->DPI_TXT->Size = System::Drawing::Size(191, 25);
 			this->DPI_TXT->TabIndex = 9;
 			// 
 			// listView_Guardias
 			// 
+			this->listView_Guardias->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(7) {
+				this->nombres,
+					this->apellidos, this->estado_civil, this->dpi, this->direccion, this->edad, this->id_puesto
+			});
 			this->listView_Guardias->HideSelection = false;
-			this->listView_Guardias->Location = System::Drawing::Point(15, 56);
+			this->listView_Guardias->Location = System::Drawing::Point(7, 70);
+			this->listView_Guardias->Margin = System::Windows::Forms::Padding(4);
 			this->listView_Guardias->Name = L"listView_Guardias";
-			this->listView_Guardias->Size = System::Drawing::Size(419, 172);
+			this->listView_Guardias->Size = System::Drawing::Size(668, 211);
 			this->listView_Guardias->TabIndex = 10;
 			this->listView_Guardias->UseCompatibleStateImageBehavior = false;
+			this->listView_Guardias->View = System::Windows::Forms::View::Details;
 			this->listView_Guardias->SelectedIndexChanged += gcnew System::EventHandler(this, &ING_GUARDIAS::listView_Guardias_SelectedIndexChanged);
+			// 
+			// nombres
+			// 
+			this->nombres->Text = L"Nombres";
+			this->nombres->Width = 84;
+			// 
+			// apellidos
+			// 
+			this->apellidos->Text = L"Apellidos";
+			this->apellidos->Width = 94;
+			// 
+			// estado_civil
+			// 
+			this->estado_civil->Text = L"Estado civil";
+			this->estado_civil->Width = 99;
+			// 
+			// dpi
+			// 
+			this->dpi->Text = L"DPI";
+			this->dpi->Width = 84;
+			// 
+			// direccion
+			// 
+			this->direccion->Text = L"Direccion";
+			this->direccion->Width = 97;
+			// 
+			// edad
+			// 
+			this->edad->Text = L"Edad";
+			this->edad->Width = 67;
+			// 
+			// id_puesto
+			// 
+			this->id_puesto->Text = L"Puesto";
+			this->id_puesto->Width = 90;
 			// 
 			// groupBox1
 			// 
@@ -240,11 +308,11 @@ namespace PROYF {
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->groupBox1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->groupBox1->Location = System::Drawing::Point(24, 11);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox1->Location = System::Drawing::Point(32, 14);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->groupBox1->Size = System::Drawing::Size(302, 289);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox1->Size = System::Drawing::Size(403, 356);
 			this->groupBox1->TabIndex = 12;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Datos";
@@ -252,9 +320,10 @@ namespace PROYF {
 			// 
 			// idPuesto_TXT
 			// 
-			this->idPuesto_TXT->Location = System::Drawing::Point(122, 206);
+			this->idPuesto_TXT->Location = System::Drawing::Point(163, 254);
+			this->idPuesto_TXT->Margin = System::Windows::Forms::Padding(4);
 			this->idPuesto_TXT->Name = L"idPuesto_TXT";
-			this->idPuesto_TXT->Size = System::Drawing::Size(144, 22);
+			this->idPuesto_TXT->Size = System::Drawing::Size(191, 25);
 			this->idPuesto_TXT->TabIndex = 13;
 			// 
 			// label7
@@ -263,17 +332,19 @@ namespace PROYF {
 			this->label7->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label7->Location = System::Drawing::Point(19, 206);
+			this->label7->Location = System::Drawing::Point(25, 254);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(72, 13);
+			this->label7->Size = System::Drawing::Size(82, 17);
 			this->label7->TabIndex = 12;
 			this->label7->Text = L"id_puesto";
 			// 
 			// Direc_TXT
 			// 
-			this->Direc_TXT->Location = System::Drawing::Point(122, 146);
+			this->Direc_TXT->Location = System::Drawing::Point(163, 180);
+			this->Direc_TXT->Margin = System::Windows::Forms::Padding(4);
 			this->Direc_TXT->Name = L"Direc_TXT";
-			this->Direc_TXT->Size = System::Drawing::Size(144, 22);
+			this->Direc_TXT->Size = System::Drawing::Size(191, 25);
 			this->Direc_TXT->TabIndex = 11;
 			// 
 			// label6
@@ -281,17 +352,19 @@ namespace PROYF {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(19, 146);
+			this->label6->Location = System::Drawing::Point(25, 180);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(69, 13);
+			this->label6->Size = System::Drawing::Size(80, 17);
 			this->label6->TabIndex = 10;
 			this->label6->Text = L"Dirección";
 			// 
 			// Guardar_button
 			// 
-			this->Guardar_button->Location = System::Drawing::Point(153, 251);
+			this->Guardar_button->Location = System::Drawing::Point(204, 309);
+			this->Guardar_button->Margin = System::Windows::Forms::Padding(4);
 			this->Guardar_button->Name = L"Guardar_button";
-			this->Guardar_button->Size = System::Drawing::Size(75, 23);
+			this->Guardar_button->Size = System::Drawing::Size(100, 28);
 			this->Guardar_button->TabIndex = 0;
 			this->Guardar_button->Text = L"Guardar";
 			this->Guardar_button->UseVisualStyleBackColor = true;
@@ -304,20 +377,21 @@ namespace PROYF {
 			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->groupBox2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->groupBox2->Location = System::Drawing::Point(352, 45);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox2->Location = System::Drawing::Point(469, 55);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->groupBox2->Size = System::Drawing::Size(460, 255);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox2->Size = System::Drawing::Size(682, 314);
 			this->groupBox2->TabIndex = 13;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Informacion Guardias";
 			// 
 			// CONSULTAR_G
 			// 
-			this->CONSULTAR_G->Location = System::Drawing::Point(178, 23);
+			this->CONSULTAR_G->Location = System::Drawing::Point(305, 27);
+			this->CONSULTAR_G->Margin = System::Windows::Forms::Padding(4);
 			this->CONSULTAR_G->Name = L"CONSULTAR_G";
-			this->CONSULTAR_G->Size = System::Drawing::Size(91, 23);
+			this->CONSULTAR_G->Size = System::Drawing::Size(121, 28);
 			this->CONSULTAR_G->TabIndex = 11;
 			this->CONSULTAR_G->Text = L"CONSULTAR";
 			this->CONSULTAR_G->UseVisualStyleBackColor = true;
@@ -325,12 +399,13 @@ namespace PROYF {
 			// 
 			// ING_GUARDIAS
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->ClientSize = System::Drawing::Size(840, 320);
+			this->ClientSize = System::Drawing::Size(1185, 386);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->groupBox2);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"ING_GUARDIAS";
 			this->Text = L"ING_GUARDIAS";
 			this->groupBox1->ResumeLayout(false);
@@ -347,14 +422,14 @@ namespace PROYF {
 	private: System::Void Guardar_button_Click(System::Object^ sender, System::EventArgs^ e) {
 		Conexion cldatos;
 		cldatos.Insert_Guar(
-
 			NOMBRES_TXT->Text,
 			APELLIDOS_TXT->Text,
 			Convert::ToInt64(ECIVL_TXT->Text),
 			Convert::ToInt64(DPI_TXT->Text),
 			Direc_TXT->Text,
 			Convert::ToInt64(EDAD_TXT->Text),
-			Convert::ToInt64(idPuesto_TXT->Text));
+			Convert::ToInt64(idPuesto_TXT->Text)
+		);
 		MessageBox::Show("Registro guardado exitosamente");
 
 
@@ -363,22 +438,27 @@ namespace PROYF {
 		SqlConnection^ cn;
 		SqlConnectionStringBuilder^ st;
 		String^ nombres; String^ apellidos; String^ estado_civil; String^ dpi; String^ direccion; String^ edad; String^ id_puesto;
-
+		st = gcnew SqlConnectionStringBuilder();
+		st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+		//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+		//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
+		st->InitialCatalog = "proteccionTotal";
+		st->IntegratedSecurity = true;
 		cn = gcnew SqlConnection(Convert::ToString(st));
-		ListView^ listView2 = gcnew ListView();
-		String^ sentencia = "SELECT *FROM posicion";
+		ListView^ listView_Guardias = gcnew ListView();
+		String^ sentencia = "select * from posicion";
 		SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
 		cn->Open();
 		SqlDataReader^ reader = ejecutar->ExecuteReader();
 		while (reader->Read())
 		{
-			nombres = (reader["nombres"]->ToString());
+			nombres = (reader[	"nombres"]->ToString());
 			apellidos = (reader["apellidos"]->ToString());
 			estado_civil = (reader["estado_civil"]->ToString());
 			dpi = (reader["dpi"]->ToString());
 			direccion = (reader["direccion"]->ToString());
 			edad = (reader["edad"]->ToString());
-			edad = (reader["id_puesto"]->ToString());
+			id_puesto = (reader["id_puesto"]->ToString());
 			String^ srtNew1 = gcnew String(nombres);
 			String^ srtNew2 = gcnew String(apellidos);
 			String^ srtNew3 = gcnew String(estado_civil);
@@ -386,7 +466,7 @@ namespace PROYF {
 			String^ srtNew5 = gcnew String(direccion);
 			String^ srtNew6 = gcnew String(edad);
 			String^ srtNew7 = gcnew String(id_puesto);
-
+		
 			ListViewItem^ listView2 = gcnew Windows::Forms::ListViewItem(srtNew1);
 			listView2->SubItems->Add(srtNew2);
 			listView2->SubItems->Add(srtNew3);

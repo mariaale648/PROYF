@@ -127,8 +127,10 @@
     <ClCompile Include="cliente.cpp" />
     <ClCompile Include="Consulta__Inv.cpp" />
     <ClCompile Include="Crear_guardia.cpp" />
+    <ClCompile Include="Distrito.cpp" />
     <ClCompile Include="ING_GUARDIAS.cpp" />
     <ClCompile Include="PRINC.cpp" />
+    <ClCompile Include="Puesto.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Add_arti.h">
@@ -150,10 +152,16 @@
     <ClInclude Include="Crear_guardia.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Distrito.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ING_GUARDIAS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PRINC.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Puesto.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -176,11 +184,17 @@
     <EmbeddedResource Include="Crear_guardia.resx">
       <DependentUpon>Crear_guardia.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Distrito.resx">
+      <DependentUpon>Distrito.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ING_GUARDIAS.resx">
       <DependentUpon>ING_GUARDIAS.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRINC.resx">
       <DependentUpon>PRINC.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Puesto.resx">
+      <DependentUpon>Puesto.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
