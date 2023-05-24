@@ -363,6 +363,11 @@ namespace PROYF {
 			Fecha_ingreso->Text
 			);
 			MessageBox::Show("Registro guardado exitosamente");
+			nombre_art_txt->Text = "";
+			desc_txt->Text = "";
+			Proveedor_txt->Text = "";
+			Cantidad_txt->Text = "";
+			Fecha_ingreso->Text = "";
 
 	}
 private: System::Void ID_art_txt_TextChanged(System::Object^ sender, System::EventArgs^ e) {

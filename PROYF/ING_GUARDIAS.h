@@ -457,6 +457,13 @@ namespace PROYF {
 			Convert::ToInt64(idPuesto_TXT->Text)
 		);
 		MessageBox::Show("Registro guardado exitosamente");
+		NOMBRES_TXT->Text = "";
+		APELLIDOS_TXT->Text = "";
+		ECIVL_TXT->Text = "";
+		DPI_TXT->Text = "";
+		Direc_TXT->Text = "";
+		EDAD_TXT->Text = "";
+		idPuesto_TXT->Text = "";
 
 
 	}

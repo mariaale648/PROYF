@@ -238,6 +238,8 @@ namespace PROYF {
 		Convert::ToInt64(NIT_TXT->Text)
 		);
 		MessageBox::Show("Registro guardado exitosamente");
+		nombre_empre_TXT->Text = "";
+		NIT_TXT->Text = "";
 	}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	SqlConnection^ cn;

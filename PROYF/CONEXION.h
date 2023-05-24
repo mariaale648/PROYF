@@ -18,8 +18,8 @@ protected:
     void Conectar() {
         st = gcnew SqlConnectionStringBuilder();        
         //st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-        //st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
-        st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
+        st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+        //st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
         st->InitialCatalog = "proteccionTotal";
         st->IntegratedSecurity = true;
         cn = gcnew SqlConnection(Convert::ToString(st));
@@ -78,4 +78,32 @@ public:
         ejecutar->ExecuteNonQuery();
         cn->Close();
     }
+    void crear_distrito(String^ nombre_distritro)
+    {
+        Conectar();
+        String^ sentencia = "Insert into distrito values(@nombre_distrito)";
+        SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
+        ejecutar->Parameters->AddWithValue("@nombre_distrito", nombre_distritro);
+        cn->Open();
+        ejecutar->ExecuteNonQuery();
+        cn->Close();
+    }
+
+    void crear_puesto(String^ nombre, String^ direccion, int id_distrito, int id_cliente, int id_tpuesto, String^ lugar_entrega, String^ hora_entrega)
+    {
+        Conectar();
+        String^ sentencia = "Insert into puesto values(@nombre, @direccion, @id_distrito, @id_cliente, @id_tpuesto, @lugar_entrega, @hora_entrega)";
+        SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
+        ejecutar->Parameters->AddWithValue("@nombre",nombre);
+        ejecutar->Parameters->AddWithValue("@direccion", direccion);
+        ejecutar->Parameters->AddWithValue("@id_distrito", id_distrito);
+        ejecutar->Parameters->AddWithValue("@id_cliente", id_cliente);
+        ejecutar->Parameters->AddWithValue("@id_tpuesto", id_tpuesto);
+        ejecutar->Parameters->AddWithValue("@lugar_entrega",lugar_entrega);
+        ejecutar->Parameters->AddWithValue("@hora_entrega", hora_entrega);
+        cn->Open();
+        ejecutar->ExecuteNonQuery();
+        cn->Close();
+    }
+
 };

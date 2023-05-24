@@ -37,8 +37,9 @@ namespace PROYF {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::TextBox^ nombre_distr;
 	protected:
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::ListView^ listView_Distrito;
@@ -62,7 +63,7 @@ namespace PROYF {
 		void InitializeComponent(void)
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->nombre_distr = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->listView_Distrito = (gcnew System::Windows::Forms::ListView());
@@ -77,21 +78,23 @@ namespace PROYF {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label1->Location = System::Drawing::Point(184, 68);
+			this->label1->Location = System::Drawing::Point(138, 55);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(72, 17);
+			this->label1->Size = System::Drawing::Size(62, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Nombre:";
 			// 
-			// textBox1
+			// nombre_distr
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->nombre_distr->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->textBox1->Location = System::Drawing::Point(269, 65);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(200, 25);
-			this->textBox1->TabIndex = 1;
+			this->nombre_distr->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->nombre_distr->Location = System::Drawing::Point(202, 53);
+			this->nombre_distr->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->nombre_distr->Name = L"nombre_distr";
+			this->nombre_distr->Size = System::Drawing::Size(151, 22);
+			this->nombre_distr->TabIndex = 1;
 			// 
 			// button1
 			// 
@@ -99,12 +102,14 @@ namespace PROYF {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->button1->Location = System::Drawing::Point(187, 120);
+			this->button1->Location = System::Drawing::Point(140, 98);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(104, 40);
+			this->button1->Size = System::Drawing::Size(78, 32);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"agregar";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &Distrito::button1_Click);
 			// 
 			// button2
 			// 
@@ -112,9 +117,10 @@ namespace PROYF {
 			this->button2->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->button2->Location = System::Drawing::Point(365, 120);
+			this->button2->Location = System::Drawing::Point(274, 98);
+			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(104, 40);
+			this->button2->Size = System::Drawing::Size(78, 32);
 			this->button2->TabIndex = 3;
 			this->button2->Text = L"consultar";
 			this->button2->UseVisualStyleBackColor = false;
@@ -124,9 +130,10 @@ namespace PROYF {
 			// 
 			this->listView_Distrito->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(1) { this->nombre_distrito });
 			this->listView_Distrito->HideSelection = false;
-			this->listView_Distrito->Location = System::Drawing::Point(121, 192);
+			this->listView_Distrito->Location = System::Drawing::Point(91, 156);
+			this->listView_Distrito->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listView_Distrito->Name = L"listView_Distrito";
-			this->listView_Distrito->Size = System::Drawing::Size(435, 179);
+			this->listView_Distrito->Size = System::Drawing::Size(327, 146);
 			this->listView_Distrito->TabIndex = 4;
 			this->listView_Distrito->UseCompatibleStateImageBehavior = false;
 			this->listView_Distrito->View = System::Windows::Forms::View::Details;
@@ -143,9 +150,10 @@ namespace PROYF {
 			this->Regresar->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Regresar->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->Regresar->Location = System::Drawing::Point(452, 403);
+			this->Regresar->Location = System::Drawing::Point(339, 327);
+			this->Regresar->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Regresar->Name = L"Regresar";
-			this->Regresar->Size = System::Drawing::Size(104, 37);
+			this->Regresar->Size = System::Drawing::Size(78, 30);
 			this->Regresar->TabIndex = 5;
 			this->Regresar->Text = L"Regresar";
 			this->Regresar->UseVisualStyleBackColor = false;
@@ -156,26 +164,29 @@ namespace PROYF {
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->groupBox1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->groupBox1->Location = System::Drawing::Point(40, 29);
+			this->groupBox1->Location = System::Drawing::Point(30, 24);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(602, 447);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox1->Size = System::Drawing::Size(452, 363);
 			this->groupBox1->TabIndex = 6;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Distrito";
 			// 
 			// Distrito
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->ClientSize = System::Drawing::Size(722, 510);
+			this->ClientSize = System::Drawing::Size(542, 414);
 			this->Controls->Add(this->Regresar);
 			this->Controls->Add(this->listView_Distrito);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->nombre_distr);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->groupBox1);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"Distrito";
 			this->Text = L"Distrito";
 			this->ResumeLayout(false);
@@ -212,6 +223,14 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void Regresar_Click(System::Object^ sender, System::EventArgs^ e) {
 	Distrito::Close();
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	Conexion cldatos;
+	cldatos.crear_distrito(
+		nombre_distr->Text
+	);
+	MessageBox::Show("Registro guardado exitosamente");
+	nombre_distr->Text = "";
 }
 };
 }
