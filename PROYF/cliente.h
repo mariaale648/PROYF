@@ -48,6 +48,7 @@ namespace PROYF {
 	private: System::Windows::Forms::ColumnHeader^ nit;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ Regresar;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
 
 
 	protected:
@@ -75,53 +76,68 @@ namespace PROYF {
 			this->nit = (gcnew System::Windows::Forms::ColumnHeader());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->Regresar = (gcnew System::Windows::Forms::Button());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(16, 44);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->label1->Location = System::Drawing::Point(252, 67);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(132, 16);
+			this->label1->Size = System::Drawing::Size(163, 17);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Nombre de empresa";
 			// 
 			// nombre_empre_TXT
 			// 
-			this->nombre_empre_TXT->Location = System::Drawing::Point(160, 44);
+			this->nombre_empre_TXT->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->nombre_empre_TXT->Location = System::Drawing::Point(422, 62);
 			this->nombre_empre_TXT->Margin = System::Windows::Forms::Padding(4);
 			this->nombre_empre_TXT->Name = L"nombre_empre_TXT";
-			this->nombre_empre_TXT->Size = System::Drawing::Size(259, 22);
+			this->nombre_empre_TXT->Size = System::Drawing::Size(259, 23);
 			this->nombre_empre_TXT->TabIndex = 1;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(16, 87);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->label2->Location = System::Drawing::Point(252, 110);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(86, 16);
+			this->label2->Size = System::Drawing::Size(104, 17);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"NIT empresa";
 			// 
 			// NIT_TXT
 			// 
-			this->NIT_TXT->Location = System::Drawing::Point(160, 84);
+			this->NIT_TXT->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NIT_TXT->Location = System::Drawing::Point(422, 102);
 			this->NIT_TXT->Margin = System::Windows::Forms::Padding(4);
 			this->NIT_TXT->Name = L"NIT_TXT";
-			this->NIT_TXT->Size = System::Drawing::Size(259, 22);
+			this->NIT_TXT->Size = System::Drawing::Size(259, 23);
 			this->NIT_TXT->TabIndex = 3;
 			// 
 			// save_cliente_button
 			// 
-			this->save_cliente_button->Location = System::Drawing::Point(104, 156);
+			this->save_cliente_button->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->save_cliente_button->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->save_cliente_button->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->save_cliente_button->Location = System::Drawing::Point(329, 171);
 			this->save_cliente_button->Margin = System::Windows::Forms::Padding(4);
 			this->save_cliente_button->Name = L"save_cliente_button";
 			this->save_cliente_button->Size = System::Drawing::Size(100, 28);
 			this->save_cliente_button->TabIndex = 4;
 			this->save_cliente_button->Text = L"Guardar";
-			this->save_cliente_button->UseVisualStyleBackColor = true;
+			this->save_cliente_button->UseVisualStyleBackColor = false;
 			this->save_cliente_button->Click += gcnew System::EventHandler(this, &cliente::save_cliente_button_Click);
 			// 
 			// listView_Cliente
@@ -131,9 +147,9 @@ namespace PROYF {
 					this->nit
 			});
 			this->listView_Cliente->HideSelection = false;
-			this->listView_Cliente->Location = System::Drawing::Point(498, 44);
+			this->listView_Cliente->Location = System::Drawing::Point(211, 226);
 			this->listView_Cliente->Name = L"listView_Cliente";
-			this->listView_Cliente->Size = System::Drawing::Size(438, 168);
+			this->listView_Cliente->Size = System::Drawing::Size(522, 168);
 			this->listView_Cliente->TabIndex = 5;
 			this->listView_Cliente->UseCompatibleStateImageBehavior = false;
 			this->listView_Cliente->View = System::Windows::Forms::View::Details;
@@ -150,30 +166,52 @@ namespace PROYF {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(280, 156);
+			this->button1->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->button1->Location = System::Drawing::Point(476, 171);
 			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(100, 28);
 			this->button1->TabIndex = 6;
 			this->button1->Text = L"Consultar";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &cliente::button1_Click);
 			// 
 			// Regresar
 			// 
-			this->Regresar->Location = System::Drawing::Point(104, 254);
+			this->Regresar->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Regresar->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Regresar->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->Regresar->Location = System::Drawing::Point(400, 421);
 			this->Regresar->Name = L"Regresar";
-			this->Regresar->Size = System::Drawing::Size(75, 23);
+			this->Regresar->Size = System::Drawing::Size(100, 28);
 			this->Regresar->TabIndex = 7;
 			this->Regresar->Text = L"regresar";
-			this->Regresar->UseVisualStyleBackColor = true;
+			this->Regresar->UseVisualStyleBackColor = false;
 			this->Regresar->Click += gcnew System::EventHandler(this, &cliente::Regresar_Click);
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->groupBox1->Location = System::Drawing::Point(73, 25);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(759, 439);
+			this->groupBox1->TabIndex = 8;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Cliente";
+			this->groupBox1->Enter += gcnew System::EventHandler(this, &cliente::groupBox1_Enter);
 			// 
 			// cliente
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1100, 321);
+			this->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->ClientSize = System::Drawing::Size(894, 504);
 			this->Controls->Add(this->Regresar);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->listView_Cliente);
@@ -182,9 +220,11 @@ namespace PROYF {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->nombre_empre_TXT);
 			this->Controls->Add(this->label1);
+			this->Controls->Add(this->groupBox1);
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"cliente";
 			this->Text = L"cliente";
+			this->Load += gcnew System::EventHandler(this, &cliente::cliente_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -228,6 +268,10 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void Regresar_Click(System::Object^ sender, System::EventArgs^ e) {
 	cliente::Close();
+}
+private: System::Void cliente_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

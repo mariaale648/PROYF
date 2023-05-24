@@ -110,10 +110,10 @@ namespace PROYF {
 			// Agregar_inv_button
 			// 
 			this->Agregar_inv_button->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->Agregar_inv_button->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Agregar_inv_button->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Agregar_inv_button->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->Agregar_inv_button->Location = System::Drawing::Point(49, 209);
+			this->Agregar_inv_button->Location = System::Drawing::Point(49, 265);
 			this->Agregar_inv_button->Margin = System::Windows::Forms::Padding(4);
 			this->Agregar_inv_button->Name = L"Agregar_inv_button";
 			this->Agregar_inv_button->Size = System::Drawing::Size(229, 71);
@@ -125,10 +125,10 @@ namespace PROYF {
 			// Asignar_art_button
 			// 
 			this->Asignar_art_button->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->Asignar_art_button->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Asignar_art_button->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Asignar_art_button->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->Asignar_art_button->Location = System::Drawing::Point(524, 288);
+			this->Asignar_art_button->Location = System::Drawing::Point(524, 344);
 			this->Asignar_art_button->Margin = System::Windows::Forms::Padding(4);
 			this->Asignar_art_button->Name = L"Asignar_art_button";
 			this->Asignar_art_button->Size = System::Drawing::Size(229, 71);
@@ -155,44 +155,56 @@ namespace PROYF {
 			// 
 			// Distrito_button
 			// 
-			this->Distrito_button->Location = System::Drawing::Point(49, 288);
+			this->Distrito_button->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Distrito_button->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Distrito_button->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->Distrito_button->Location = System::Drawing::Point(49, 344);
 			this->Distrito_button->Margin = System::Windows::Forms::Padding(4);
 			this->Distrito_button->Name = L"Distrito_button";
 			this->Distrito_button->Size = System::Drawing::Size(229, 71);
 			this->Distrito_button->TabIndex = 13;
 			this->Distrito_button->Text = L"Distrito";
-			this->Distrito_button->UseVisualStyleBackColor = true;
+			this->Distrito_button->UseVisualStyleBackColor = false;
 			this->Distrito_button->Click += gcnew System::EventHandler(this, &PRINC::Distrito_button_Click);
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(286, 289);
+			this->button1->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->button1->Location = System::Drawing::Point(286, 345);
 			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(229, 71);
 			this->button1->TabIndex = 12;
 			this->button1->Text = L"Puesto";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &PRINC::button1_Click);
 			// 
 			// Cliente_button
 			// 
-			this->Cliente_button->Location = System::Drawing::Point(524, 209);
+			this->Cliente_button->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Cliente_button->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Cliente_button->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->Cliente_button->Location = System::Drawing::Point(524, 265);
 			this->Cliente_button->Margin = System::Windows::Forms::Padding(4);
 			this->Cliente_button->Name = L"Cliente_button";
 			this->Cliente_button->Size = System::Drawing::Size(229, 71);
 			this->Cliente_button->TabIndex = 11;
 			this->Cliente_button->Text = L"Clientes";
-			this->Cliente_button->UseVisualStyleBackColor = true;
+			this->Cliente_button->UseVisualStyleBackColor = false;
 			this->Cliente_button->Click += gcnew System::EventHandler(this, &PRINC::Cliente_button_Click);
 			// 
 			// Add_cons_guardia
 			// 
 			this->Add_cons_guardia->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->Add_cons_guardia->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Add_cons_guardia->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Add_cons_guardia->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->Add_cons_guardia->Location = System::Drawing::Point(287, 209);
+			this->Add_cons_guardia->Location = System::Drawing::Point(287, 265);
 			this->Add_cons_guardia->Margin = System::Windows::Forms::Padding(4);
 			this->Add_cons_guardia->Name = L"Add_cons_guardia";
 			this->Add_cons_guardia->Size = System::Drawing::Size(229, 71);

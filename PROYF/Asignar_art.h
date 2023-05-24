@@ -43,8 +43,8 @@ namespace PROYF {
 	private: System::Windows::Forms::ListView^ listView_Pue;
 
 
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label4;
+
+
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Button^ button1;
@@ -53,6 +53,9 @@ namespace PROYF {
 	private: System::Windows::Forms::ColumnHeader^ id_posicion;
 	private: System::Windows::Forms::ColumnHeader^ nombres;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::GroupBox^ groupBox2;
+	private: System::Windows::Forms::GroupBox^ groupBox3;
 	protected:
 
 	private:
@@ -77,12 +80,13 @@ namespace PROYF {
 			this->listView_Pue = (gcnew System::Windows::Forms::ListView());
 			this->id_posicion = (gcnew System::Windows::Forms::ColumnHeader());
 			this->nombres = (gcnew System::Windows::Forms::ColumnHeader());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -91,12 +95,13 @@ namespace PROYF {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label1->Location = System::Drawing::Point(127, 41);
+			this->label1->Location = System::Drawing::Point(100, 73);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(185, 19);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Seleccionar artículo:";
+			this->label1->Click += gcnew System::EventHandler(this, &Asignar_art::label1_Click);
 			// 
 			// label2
 			// 
@@ -104,12 +109,12 @@ namespace PROYF {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label2->Location = System::Drawing::Point(127, 111);
+			this->label2->Location = System::Drawing::Point(100, 124);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(197, 19);
+			this->label2->Size = System::Drawing::Size(202, 19);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"Seleccionar empleado";
+			this->label2->Text = L"Seleccionar empleado:";
 			this->label2->Click += gcnew System::EventHandler(this, &Asignar_art::label2_Click);
 			// 
 			// Agregar_button
@@ -118,7 +123,7 @@ namespace PROYF {
 			this->Agregar_button->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Agregar_button->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->Agregar_button->Location = System::Drawing::Point(619, 62);
+			this->Agregar_button->Location = System::Drawing::Point(562, 64);
 			this->Agregar_button->Margin = System::Windows::Forms::Padding(4);
 			this->Agregar_button->Name = L"Agregar_button";
 			this->Agregar_button->Size = System::Drawing::Size(113, 39);
@@ -130,7 +135,7 @@ namespace PROYF {
 			// 
 			this->listView_Art->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->id_articulo, this->nombre_art });
 			this->listView_Art->HideSelection = false;
-			this->listView_Art->Location = System::Drawing::Point(131, 266);
+			this->listView_Art->Location = System::Drawing::Point(104, 232);
 			this->listView_Art->Name = L"listView_Art";
 			this->listView_Art->Size = System::Drawing::Size(266, 134);
 			this->listView_Art->TabIndex = 3;
@@ -150,7 +155,7 @@ namespace PROYF {
 			// 
 			this->listView_Pue->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->id_posicion, this->nombres });
 			this->listView_Pue->HideSelection = false;
-			this->listView_Pue->Location = System::Drawing::Point(548, 266);
+			this->listView_Pue->Location = System::Drawing::Point(470, 232);
 			this->listView_Pue->Name = L"listView_Pue";
 			this->listView_Pue->Size = System::Drawing::Size(266, 134);
 			this->listView_Pue->TabIndex = 4;
@@ -167,46 +172,24 @@ namespace PROYF {
 			this->nombres->Text = L"Nombre";
 			this->nombres->Width = 149;
 			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label3->Location = System::Drawing::Point(206, 229);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(78, 19);
-			this->label3->TabIndex = 5;
-			this->label3->Text = L"Articulo";
-			this->label3->Click += gcnew System::EventHandler(this, &Asignar_art::label3_Click);
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label4->Location = System::Drawing::Point(650, 229);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(94, 19);
-			this->label4->TabIndex = 6;
-			this->label4->Text = L"Empleado";
-			this->label4->Click += gcnew System::EventHandler(this, &Asignar_art::label4_Click);
-			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(330, 38);
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->textBox1->Location = System::Drawing::Point(336, 72);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(193, 22);
+			this->textBox1->Size = System::Drawing::Size(193, 25);
 			this->textBox1->TabIndex = 7;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(330, 108);
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->textBox2->Location = System::Drawing::Point(336, 118);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(193, 22);
+			this->textBox2->Size = System::Drawing::Size(193, 25);
 			this->textBox2->TabIndex = 8;
 			// 
 			// button1
@@ -215,7 +198,7 @@ namespace PROYF {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->button1->Location = System::Drawing::Point(401, 441);
+			this->button1->Location = System::Drawing::Point(562, 111);
 			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(113, 39);
@@ -226,31 +209,72 @@ namespace PROYF {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(104, 456);
+			this->button2->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->button2->Location = System::Drawing::Point(368, 424);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->Size = System::Drawing::Size(113, 39);
 			this->button2->TabIndex = 10;
 			this->button2->Text = L"Regresar";
-			this->button2->UseVisualStyleBackColor = true;
+			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &Asignar_art::button2_Click);
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->groupBox1->Location = System::Drawing::Point(77, 201);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(327, 191);
+			this->groupBox1->TabIndex = 11;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Articulo";
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->groupBox2->Location = System::Drawing::Point(440, 201);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Size = System::Drawing::Size(327, 191);
+			this->groupBox2->TabIndex = 12;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"Empleado";
+			// 
+			// groupBox3
+			// 
+			this->groupBox3->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox3->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->groupBox3->Location = System::Drawing::Point(29, 23);
+			this->groupBox3->Name = L"groupBox3";
+			this->groupBox3->Size = System::Drawing::Size(788, 477);
+			this->groupBox3->TabIndex = 13;
+			this->groupBox3->TabStop = false;
+			this->groupBox3->Text = L"Asignar";
 			// 
 			// Asignar_art
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->ClientSize = System::Drawing::Size(934, 526);
+			this->ClientSize = System::Drawing::Size(867, 526);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
 			this->Controls->Add(this->listView_Pue);
 			this->Controls->Add(this->listView_Art);
 			this->Controls->Add(this->Agregar_button);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Controls->Add(this->groupBox1);
+			this->Controls->Add(this->groupBox2);
+			this->Controls->Add(this->groupBox3);
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Asignar_art";
 			this->Text = L"Asignar_art";
@@ -312,6 +336,8 @@ private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	Asignar_art::Close();
+}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

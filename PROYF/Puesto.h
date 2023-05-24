@@ -48,6 +48,7 @@ namespace PROYF {
 	private: System::Windows::Forms::ColumnHeader^ lugar_entrega;
 	private: System::Windows::Forms::ColumnHeader^ hora_entrega;
 	private: System::Windows::Forms::Button^ regresar;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
 	protected:
 
 	private:
@@ -73,16 +74,22 @@ namespace PROYF {
 			this->lugar_entrega = (gcnew System::Windows::Forms::ColumnHeader());
 			this->hora_entrega = (gcnew System::Windows::Forms::ColumnHeader());
 			this->regresar = (gcnew System::Windows::Forms::Button());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(724, 348);
+			this->button1->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->button1->Location = System::Drawing::Point(275, 367);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(227, 82);
+			this->button1->Size = System::Drawing::Size(100, 40);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Consultar";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Puesto::button1_Click);
 			// 
 			// listView_Puesto
@@ -92,9 +99,9 @@ namespace PROYF {
 					this->id_distrito, this->id_cliente, this->id_tpuesto, this->lugar_entrega, this->hora_entrega
 			});
 			this->listView_Puesto->HideSelection = false;
-			this->listView_Puesto->Location = System::Drawing::Point(489, 66);
+			this->listView_Puesto->Location = System::Drawing::Point(27, 113);
 			this->listView_Puesto->Name = L"listView_Puesto";
-			this->listView_Puesto->Size = System::Drawing::Size(693, 238);
+			this->listView_Puesto->Size = System::Drawing::Size(831, 238);
 			this->listView_Puesto->TabIndex = 1;
 			this->listView_Puesto->UseCompatibleStateImageBehavior = false;
 			this->listView_Puesto->View = System::Windows::Forms::View::Details;
@@ -136,24 +143,43 @@ namespace PROYF {
 			// 
 			// regresar
 			// 
-			this->regresar->Location = System::Drawing::Point(366, 363);
+			this->regresar->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->regresar->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->regresar->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->regresar->Location = System::Drawing::Point(473, 367);
 			this->regresar->Name = L"regresar";
-			this->regresar->Size = System::Drawing::Size(75, 23);
+			this->regresar->Size = System::Drawing::Size(100, 40);
 			this->regresar->TabIndex = 2;
 			this->regresar->Text = L"Regresar";
-			this->regresar->UseVisualStyleBackColor = true;
+			this->regresar->UseVisualStyleBackColor = false;
 			this->regresar->Click += gcnew System::EventHandler(this, &Puesto::regresar_Click);
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->regresar);
+			this->groupBox1->Controls->Add(this->button1);
+			this->groupBox1->Controls->Add(this->listView_Puesto);
+			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->groupBox1->Location = System::Drawing::Point(28, 27);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(902, 450);
+			this->groupBox1->TabIndex = 3;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Puesto";
 			// 
 			// Puesto
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1256, 549);
-			this->Controls->Add(this->regresar);
-			this->Controls->Add(this->listView_Puesto);
-			this->Controls->Add(this->button1);
+			this->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->ClientSize = System::Drawing::Size(972, 528);
+			this->Controls->Add(this->groupBox1);
 			this->Name = L"Puesto";
 			this->Text = L"Puesto";
+			this->groupBox1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}

@@ -289,7 +289,7 @@ namespace PROYF {
 					this->descripcion, this->marca, this->cantidad, this->fecha_in
 			});
 			this->listView_Articulo->HideSelection = false;
-			this->listView_Articulo->Location = System::Drawing::Point(502, 77);
+			this->listView_Articulo->Location = System::Drawing::Point(502, 55);
 			this->listView_Articulo->Name = L"listView_Articulo";
 			this->listView_Articulo->Size = System::Drawing::Size(545, 285);
 			this->listView_Articulo->TabIndex = 10;
@@ -323,12 +323,16 @@ namespace PROYF {
 			// 
 			// Regreso
 			// 
-			this->Regreso->Location = System::Drawing::Point(857, 40);
+			this->Regreso->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Regreso->Font = (gcnew System::Drawing::Font(L"Lucida Sans", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Regreso->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->Regreso->Location = System::Drawing::Point(936, 355);
 			this->Regreso->Name = L"Regreso";
-			this->Regreso->Size = System::Drawing::Size(75, 23);
+			this->Regreso->Size = System::Drawing::Size(111, 39);
 			this->Regreso->TabIndex = 11;
 			this->Regreso->Text = L"Regresar";
-			this->Regreso->UseVisualStyleBackColor = true;
+			this->Regreso->UseVisualStyleBackColor = false;
 			this->Regreso->Click += gcnew System::EventHandler(this, &Add_arti::Regreso_Click);
 			// 
 			// Add_arti
