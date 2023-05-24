@@ -227,8 +227,10 @@ private: System::Void Agregar_inv_button_Click(System::Object^ sender, System::E
 	this->Visible = true;
 }
 private: System::Void Asignar_art_button_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Visible = false;
 	Asignar_art^ f = gcnew Asignar_art();
-	f->Show();
+	f->ShowDialog();
+	this->Visible = true;
 }
 private: System::Void Asignar_guardias_button_Click(System::Object^ sender, System::EventArgs^ e) {
 	Asignar_guardia^ f = gcnew Asignar_guardia();
@@ -262,8 +264,10 @@ private: System::Void Crear_guardiabutton_Click(System::Object^ sender, System::
 	f->Show();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Visible = false;
 	Puesto^ f = gcnew Puesto();
-	f->Show();
+	f->ShowDialog();
+	this->Visible = true;
 }
 private: System::Void Distrito_button_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Visible = false;

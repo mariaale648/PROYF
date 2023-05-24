@@ -47,6 +47,7 @@ namespace PROYF {
 	private: System::Windows::Forms::ColumnHeader^ nombre_empresa;
 	private: System::Windows::Forms::ColumnHeader^ nit;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ Regresar;
 
 
 	protected:
@@ -73,6 +74,7 @@ namespace PROYF {
 			this->nombre_empresa = (gcnew System::Windows::Forms::ColumnHeader());
 			this->nit = (gcnew System::Windows::Forms::ColumnHeader());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->Regresar = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -157,11 +159,22 @@ namespace PROYF {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &cliente::button1_Click);
 			// 
+			// Regresar
+			// 
+			this->Regresar->Location = System::Drawing::Point(104, 254);
+			this->Regresar->Name = L"Regresar";
+			this->Regresar->Size = System::Drawing::Size(75, 23);
+			this->Regresar->TabIndex = 7;
+			this->Regresar->Text = L"regresar";
+			this->Regresar->UseVisualStyleBackColor = true;
+			this->Regresar->Click += gcnew System::EventHandler(this, &cliente::Regresar_Click);
+			// 
 			// cliente
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1100, 321);
+			this->Controls->Add(this->Regresar);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->listView_Cliente);
 			this->Controls->Add(this->save_cliente_button);
@@ -212,6 +225,9 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		this->listView_Cliente->Items->Add(listView2);
 	}
 	cn->Close();
+}
+private: System::Void Regresar_Click(System::Object^ sender, System::EventArgs^ e) {
+	cliente::Close();
 }
 };
 }

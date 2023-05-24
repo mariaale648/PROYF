@@ -52,6 +52,7 @@ namespace PROYF {
 	private: System::Windows::Forms::ColumnHeader^ nombre_art;
 	private: System::Windows::Forms::ColumnHeader^ id_posicion;
 	private: System::Windows::Forms::ColumnHeader^ nombres;
+	private: System::Windows::Forms::Button^ button2;
 	protected:
 
 	private:
@@ -71,16 +72,17 @@ namespace PROYF {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->Agregar_button = (gcnew System::Windows::Forms::Button());
 			this->listView_Art = (gcnew System::Windows::Forms::ListView());
+			this->id_articulo = (gcnew System::Windows::Forms::ColumnHeader());
+			this->nombre_art = (gcnew System::Windows::Forms::ColumnHeader());
 			this->listView_Pue = (gcnew System::Windows::Forms::ListView());
+			this->id_posicion = (gcnew System::Windows::Forms::ColumnHeader());
+			this->nombres = (gcnew System::Windows::Forms::ColumnHeader());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->id_articulo = (gcnew System::Windows::Forms::ColumnHeader());
-			this->nombre_art = (gcnew System::Windows::Forms::ColumnHeader());
-			this->id_posicion = (gcnew System::Windows::Forms::ColumnHeader());
-			this->nombres = (gcnew System::Windows::Forms::ColumnHeader());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -135,6 +137,15 @@ namespace PROYF {
 			this->listView_Art->UseCompatibleStateImageBehavior = false;
 			this->listView_Art->View = System::Windows::Forms::View::Details;
 			// 
+			// id_articulo
+			// 
+			this->id_articulo->Text = L"ID";
+			// 
+			// nombre_art
+			// 
+			this->nombre_art->Text = L"Nombre";
+			this->nombre_art->Width = 201;
+			// 
 			// listView_Pue
 			// 
 			this->listView_Pue->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->id_posicion, this->nombres });
@@ -145,6 +156,16 @@ namespace PROYF {
 			this->listView_Pue->TabIndex = 4;
 			this->listView_Pue->UseCompatibleStateImageBehavior = false;
 			this->listView_Pue->View = System::Windows::Forms::View::Details;
+			// 
+			// id_posicion
+			// 
+			this->id_posicion->Text = L"ID";
+			this->id_posicion->Width = 112;
+			// 
+			// nombres
+			// 
+			this->nombres->Text = L"Nombre";
+			this->nombres->Width = 149;
 			// 
 			// label3
 			// 
@@ -203,24 +224,15 @@ namespace PROYF {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Asignar_art::button1_Click);
 			// 
-			// id_articulo
+			// button2
 			// 
-			this->id_articulo->Text = L"ID";
-			// 
-			// nombre_art
-			// 
-			this->nombre_art->Text = L"Nombre";
-			this->nombre_art->Width = 201;
-			// 
-			// id_posicion
-			// 
-			this->id_posicion->Text = L"ID";
-			this->id_posicion->Width = 112;
-			// 
-			// nombres
-			// 
-			this->nombres->Text = L"Nombre";
-			this->nombres->Width = 149;
+			this->button2->Location = System::Drawing::Point(104, 456);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->TabIndex = 10;
+			this->button2->Text = L"Regresar";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Asignar_art::button2_Click);
 			// 
 			// Asignar_art
 			// 
@@ -228,6 +240,7 @@ namespace PROYF {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
 			this->ClientSize = System::Drawing::Size(934, 526);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
@@ -296,6 +309,9 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	Asignar_art::Close();
 }
 };
 }

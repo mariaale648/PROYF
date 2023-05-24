@@ -47,6 +47,7 @@ namespace PROYF {
 	private: System::Windows::Forms::ColumnHeader^ id_tpuesto;
 	private: System::Windows::Forms::ColumnHeader^ lugar_entrega;
 	private: System::Windows::Forms::ColumnHeader^ hora_entrega;
+	private: System::Windows::Forms::Button^ regresar;
 	protected:
 
 	private:
@@ -71,6 +72,7 @@ namespace PROYF {
 			this->id_tpuesto = (gcnew System::Windows::Forms::ColumnHeader());
 			this->lugar_entrega = (gcnew System::Windows::Forms::ColumnHeader());
 			this->hora_entrega = (gcnew System::Windows::Forms::ColumnHeader());
+			this->regresar = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -132,11 +134,22 @@ namespace PROYF {
 			this->hora_entrega->Text = L"Hora";
 			this->hora_entrega->Width = 107;
 			// 
+			// regresar
+			// 
+			this->regresar->Location = System::Drawing::Point(366, 363);
+			this->regresar->Name = L"regresar";
+			this->regresar->Size = System::Drawing::Size(75, 23);
+			this->regresar->TabIndex = 2;
+			this->regresar->Text = L"Regresar";
+			this->regresar->UseVisualStyleBackColor = true;
+			this->regresar->Click += gcnew System::EventHandler(this, &Puesto::regresar_Click);
+			// 
 			// Puesto
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1256, 549);
+			this->Controls->Add(this->regresar);
 			this->Controls->Add(this->listView_Puesto);
 			this->Controls->Add(this->button1);
 			this->Name = L"Puesto";
@@ -187,5 +200,8 @@ namespace PROYF {
 		}
 		cn->Close();
 	}
-	};
+	private: System::Void regresar_Click(System::Object^ sender, System::EventArgs^ e) {
+		Puesto::Close();
+	}
+};
 }
