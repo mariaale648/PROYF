@@ -126,6 +126,7 @@
     <ClCompile Include="Asignar_guardia.cpp" />
     <ClCompile Include="cliente.cpp" />
     <ClCompile Include="Consulta__Inv.cpp" />
+    <ClCompile Include="Crear_guardia.cpp" />
     <ClCompile Include="ING_GUARDIAS.cpp" />
     <ClCompile Include="PRINC.cpp" />
   </ItemGroup>
@@ -144,6 +145,9 @@
     </ClInclude>
     <ClInclude Include="CONEXION.h" />
     <ClInclude Include="Consulta__Inv.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Crear_guardia.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ING_GUARDIAS.h">
@@ -168,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta__Inv.resx">
       <DependentUpon>Consulta__Inv.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crear_guardia.resx">
+      <DependentUpon>Crear_guardia.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ING_GUARDIAS.resx">
       <DependentUpon>ING_GUARDIAS.h</DependentUpon>

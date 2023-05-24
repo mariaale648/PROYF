@@ -127,7 +127,8 @@ namespace PROYF {
 		Conexion cldatos;
 		cldatos.Insert_cliente
 		(
-		nombre_empre_TXT->Text
+		nombre_empre_TXT->Text,
+		Convert::ToInt64(NIT_TXT->Text)
 		);
 		MessageBox::Show("Registro guardado exitosamente");
 	}

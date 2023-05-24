@@ -5,6 +5,7 @@
 #include"Asignar_art.h"
 #include "Asignar_guardia.h"
 #include "cliente.h"
+#include "Crear_guardia.h"
 
 namespace PROYF {
 
@@ -58,6 +59,7 @@ namespace PROYF {
 	private: System::Windows::Forms::Button^ Distrito_button;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ Cliente_button;
+	private: System::Windows::Forms::Button^ Crear_guardiabutton;
 
 
 
@@ -84,11 +86,12 @@ namespace PROYF {
 			this->Asignar_art_button = (gcnew System::Windows::Forms::Button());
 			this->Asignar_guardias_button = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->Distrito_button = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->Cliente_button = (gcnew System::Windows::Forms::Button());
 			this->Inv_almacenes = (gcnew System::Windows::Forms::Button());
 			this->Add_cons_guardia = (gcnew System::Windows::Forms::Button());
-			this->Cliente_button = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->Distrito_button = (gcnew System::Windows::Forms::Button());
+			this->Crear_guardiabutton = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
@@ -148,6 +151,7 @@ namespace PROYF {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->Crear_guardiabutton);
 			this->groupBox1->Controls->Add(this->Distrito_button);
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->Cliente_button);
@@ -163,6 +167,34 @@ namespace PROYF {
 			this->groupBox1->Size = System::Drawing::Size(614, 411);
 			this->groupBox1->TabIndex = 9;
 			this->groupBox1->TabStop = false;
+			// 
+			// Distrito_button
+			// 
+			this->Distrito_button->Location = System::Drawing::Point(37, 234);
+			this->Distrito_button->Name = L"Distrito_button";
+			this->Distrito_button->Size = System::Drawing::Size(172, 58);
+			this->Distrito_button->TabIndex = 13;
+			this->Distrito_button->Text = L"Agregar distrito";
+			this->Distrito_button->UseVisualStyleBackColor = true;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(393, 298);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(172, 58);
+			this->button1->TabIndex = 12;
+			this->button1->Text = L"Crear puesto";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// Cliente_button
+			// 
+			this->Cliente_button->Location = System::Drawing::Point(393, 170);
+			this->Cliente_button->Name = L"Cliente_button";
+			this->Cliente_button->Size = System::Drawing::Size(172, 58);
+			this->Cliente_button->TabIndex = 11;
+			this->Cliente_button->Text = L"Agregar cliente";
+			this->Cliente_button->UseVisualStyleBackColor = true;
+			this->Cliente_button->Click += gcnew System::EventHandler(this, &PRINC::Cliente_button_Click);
 			// 
 			// Inv_almacenes
 			// 
@@ -189,37 +221,20 @@ namespace PROYF {
 			this->Add_cons_guardia->Name = L"Add_cons_guardia";
 			this->Add_cons_guardia->Size = System::Drawing::Size(172, 58);
 			this->Add_cons_guardia->TabIndex = 10;
-			this->Add_cons_guardia->Text = L"Agregar/consultar guardias";
+			this->Add_cons_guardia->Text = L"Agregar/consultar empleados";
 			this->Add_cons_guardia->UseVisualStyleBackColor = false;
 			this->Add_cons_guardia->Click += gcnew System::EventHandler(this, &PRINC::Add_cons_guardia_Click);
 			// 
-			// Cliente_button
+			// Crear_guardiabutton
 			// 
-			this->Cliente_button->Location = System::Drawing::Point(393, 170);
-			this->Cliente_button->Name = L"Cliente_button";
-			this->Cliente_button->Size = System::Drawing::Size(172, 58);
-			this->Cliente_button->TabIndex = 11;
-			this->Cliente_button->Text = L"Agregar cliente";
-			this->Cliente_button->UseVisualStyleBackColor = true;
-			this->Cliente_button->Click += gcnew System::EventHandler(this, &PRINC::Cliente_button_Click);
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(393, 298);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(172, 58);
-			this->button1->TabIndex = 12;
-			this->button1->Text = L"Crear puesto";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// Distrito_button
-			// 
-			this->Distrito_button->Location = System::Drawing::Point(37, 234);
-			this->Distrito_button->Name = L"Distrito_button";
-			this->Distrito_button->Size = System::Drawing::Size(172, 58);
-			this->Distrito_button->TabIndex = 13;
-			this->Distrito_button->Text = L"Agregar distrito";
-			this->Distrito_button->UseVisualStyleBackColor = true;
+			this->Crear_guardiabutton->Location = System::Drawing::Point(215, 298);
+			this->Crear_guardiabutton->Name = L"Crear_guardiabutton";
+			this->Crear_guardiabutton->Size = System::Drawing::Size(172, 58);
+			this->Crear_guardiabutton->TabIndex = 14;
+			this->Crear_guardiabutton->Text = L"Crear guardia";
+			this->Crear_guardiabutton->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
+			this->Crear_guardiabutton->UseVisualStyleBackColor = true;
+			this->Crear_guardiabutton->Click += gcnew System::EventHandler(this, &PRINC::Crear_guardiabutton_Click);
 			// 
 			// PRINC
 			// 
@@ -267,6 +282,10 @@ private: System::Void Inv_almacenes_Click(System::Object^ sender, System::EventA
 
 private: System::Void Cliente_button_Click(System::Object^ sender, System::EventArgs^ e) {
 	cliente^ f = gcnew cliente();
+	f->Show();
+}
+private: System::Void Crear_guardiabutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	Crear_guardia^ f = gcnew Crear_guardia();
 	f->Show();
 }
 };

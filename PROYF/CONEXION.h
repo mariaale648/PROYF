@@ -20,7 +20,7 @@ protected:
         st = gcnew SqlConnectionStringBuilder();
         //st->DataSource = "localhost\\SQLEXPRESS";
         //st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20";(ANTONY)
-        st->DataSource = "DESKTOP - 8UHRS07\\SQLEXPRESS";//(KEVIN)
+        st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS";//(KEVIN)
         //st->DataSource = "VICTUSMARIO\\SQLEXPRESS";
         //st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20";
         st->InitialCatalog = "proteccionTotal";
@@ -59,11 +59,24 @@ public:
         cn->Close();
     }
 
-    void Insert_cliente(String^ nombre_empresa) {
+    void Insert_cliente(String^nombre_empresa, int nit) {
         Conectar();
-        String^ sentencia = "Insert into cliente values(@nombre_empresa)";
+        String^ sentencia = "Insert into cliente values(@nombre_empresa,@nit)";
         SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
         ejecutar->Parameters->AddWithValue("@nombre_empresa", nombre_empresa);
+        ejecutar->Parameters->AddWithValue("@nit", nit);
+
+        cn->Open();
+        ejecutar->ExecuteNonQuery();
+        cn->Close();
+    }
+
+    void Crear_guardia(int^ id_posicion, int id_articulo) {
+        Conectar();
+        String^ sentencia = "Insert into guardia values(@id_posicion,@id_articulo)";
+        SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
+        ejecutar->Parameters->AddWithValue("@id_posicion", id_posicion);
+        ejecutar->Parameters->AddWithValue("@id_articulo", id_articulo);
         cn->Open();
         ejecutar->ExecuteNonQuery();
         cn->Close();
