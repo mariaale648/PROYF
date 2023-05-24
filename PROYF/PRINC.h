@@ -222,7 +222,9 @@ namespace PROYF {
 
 private: System::Void Agregar_inv_button_Click(System::Object^ sender, System::EventArgs^ e) {
 	Add_arti^ f = gcnew Add_arti();
-	f->Show();
+	this->Visible = false;
+	f->ShowDialog();
+	this->Visible = true;
 }
 private: System::Void Asignar_art_button_Click(System::Object^ sender, System::EventArgs^ e) {
 	Asignar_art^ f = gcnew Asignar_art();
@@ -239,7 +241,10 @@ private: System::Void PRINC_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void Add_cons_guardia_Click(System::Object^ sender, System::EventArgs^ e) {
 	ING_GUARDIAS^ f = gcnew ING_GUARDIAS();
-	f->Show();
+	this->Visible = false;
+	f->ShowDialog();
+	this->Visible = true;
+
 }
 private: System::Void Inv_almacenes_Click(System::Object^ sender, System::EventArgs^ e) {
 	Consulta__Inv^ f = gcnew Consulta__Inv();
@@ -247,8 +252,10 @@ private: System::Void Inv_almacenes_Click(System::Object^ sender, System::EventA
 }
 
 private: System::Void Cliente_button_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Visible = false;
 	cliente^ f = gcnew cliente();
-	f->Show();
+	f->ShowDialog();
+	this->Visible = true;
 }
 private: System::Void Crear_guardiabutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	Crear_guardia^ f = gcnew Crear_guardia();
@@ -259,8 +266,9 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	f->Show();
 }
 private: System::Void Distrito_button_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Visible = false;
 	Distrito^ f = gcnew Distrito();
-	f->Show();
+	f->ShowDialog(); Visible = true;
 }
 };
 }

@@ -17,9 +17,9 @@ ref class Conexion {
 protected:
     void Conectar() {
         st = gcnew SqlConnectionStringBuilder();        
-        st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+        //st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
         //st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
-        //st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
+        st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
         st->InitialCatalog = "proteccionTotal";
         st->IntegratedSecurity = true;
         cn = gcnew SqlConnection(Convert::ToString(st));

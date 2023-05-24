@@ -71,6 +71,8 @@ namespace PROYF {
 	private: System::Windows::Forms::ColumnHeader^ direccion;
 	private: System::Windows::Forms::ColumnHeader^ edad;
 	private: System::Windows::Forms::ColumnHeader^ id_puesto;
+	private: System::Windows::Forms::Button^ regresar;
+
 
 	private:
 		/// <summary>
@@ -111,6 +113,7 @@ namespace PROYF {
 			this->Guardar_button = (gcnew System::Windows::Forms::Button());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->CONSULTAR_G = (gcnew System::Windows::Forms::Button());
+			this->regresar = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->SuspendLayout();
@@ -397,12 +400,23 @@ namespace PROYF {
 			this->CONSULTAR_G->UseVisualStyleBackColor = true;
 			this->CONSULTAR_G->Click += gcnew System::EventHandler(this, &ING_GUARDIAS::CONSULTAR_G_Click);
 			// 
+			// regresar
+			// 
+			this->regresar->Location = System::Drawing::Point(915, 36);
+			this->regresar->Name = L"regresar";
+			this->regresar->Size = System::Drawing::Size(75, 23);
+			this->regresar->TabIndex = 14;
+			this->regresar->Text = L"Regresar";
+			this->regresar->UseVisualStyleBackColor = true;
+			this->regresar->Click += gcnew System::EventHandler(this, &ING_GUARDIAS::regresar_Click);
+			// 
 			// ING_GUARDIAS
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
 			this->ClientSize = System::Drawing::Size(1185, 386);
+			this->Controls->Add(this->regresar);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->groupBox2);
 			this->Margin = System::Windows::Forms::Padding(4);
@@ -481,6 +495,9 @@ namespace PROYF {
 	private: System::Void NOMBRES_TXT_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void listView_Guardias_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void regresar_Click(System::Object^ sender, System::EventArgs^ e) {
+	ING_GUARDIAS::Close();
 }
 };
 };

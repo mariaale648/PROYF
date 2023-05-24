@@ -44,6 +44,8 @@ namespace PROYF {
 	private: System::Windows::Forms::ListView^ listView_Distrito;
 
 	private: System::Windows::Forms::ColumnHeader^ nombre_distrito;
+	private: System::Windows::Forms::Button^ Regresar;
+
 
 	private:
 		/// <summary>
@@ -64,6 +66,7 @@ namespace PROYF {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->listView_Distrito = (gcnew System::Windows::Forms::ListView());
 			this->nombre_distrito = (gcnew System::Windows::Forms::ColumnHeader());
+			this->Regresar = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -118,11 +121,22 @@ namespace PROYF {
 			this->nombre_distrito->Text = L"Nombre";
 			this->nombre_distrito->Width = 478;
 			// 
+			// Regresar
+			// 
+			this->Regresar->Location = System::Drawing::Point(155, 300);
+			this->Regresar->Name = L"Regresar";
+			this->Regresar->Size = System::Drawing::Size(75, 23);
+			this->Regresar->TabIndex = 5;
+			this->Regresar->Text = L"Regresar";
+			this->Regresar->UseVisualStyleBackColor = true;
+			this->Regresar->Click += gcnew System::EventHandler(this, &Distrito::Regresar_Click);
+			// 
 			// Distrito
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(998, 441);
+			this->Controls->Add(this->Regresar);
 			this->Controls->Add(this->listView_Distrito);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -161,6 +175,9 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		this->listView_Distrito	->Items->Add(listView2);
 	}
 	cn->Close();
+}
+private: System::Void Regresar_Click(System::Object^ sender, System::EventArgs^ e) {
+	Distrito::Close();
 }
 };
 }

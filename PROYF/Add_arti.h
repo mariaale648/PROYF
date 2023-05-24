@@ -63,6 +63,7 @@ namespace PROYF {
 	private: System::Windows::Forms::ColumnHeader^ marca;
 	private: System::Windows::Forms::ColumnHeader^ cantidad;
 	private: System::Windows::Forms::ColumnHeader^ fecha_in;
+	private: System::Windows::Forms::Button^ Regreso;
 
 	private:
 		/// <summary>
@@ -97,6 +98,7 @@ namespace PROYF {
 			this->marca = (gcnew System::Windows::Forms::ColumnHeader());
 			this->cantidad = (gcnew System::Windows::Forms::ColumnHeader());
 			this->fecha_in = (gcnew System::Windows::Forms::ColumnHeader());
+			this->Regreso = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -319,12 +321,23 @@ namespace PROYF {
 			this->fecha_in->Text = L"Fecha ingreso";
 			this->fecha_in->Width = 139;
 			// 
+			// Regreso
+			// 
+			this->Regreso->Location = System::Drawing::Point(857, 40);
+			this->Regreso->Name = L"Regreso";
+			this->Regreso->Size = System::Drawing::Size(75, 23);
+			this->Regreso->TabIndex = 11;
+			this->Regreso->Text = L"Regresar";
+			this->Regreso->UseVisualStyleBackColor = true;
+			this->Regreso->Click += gcnew System::EventHandler(this, &Add_arti::Regreso_Click);
+			// 
 			// Add_arti
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
 			this->ClientSize = System::Drawing::Size(1083, 423);
+			this->Controls->Add(this->Regreso);
 			this->Controls->Add(this->listView_Articulo);
 			this->Controls->Add(this->groupBox1);
 			this->Margin = System::Windows::Forms::Padding(4);
@@ -355,9 +368,9 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	SqlConnectionStringBuilder^ st;
 	String^ nombre_art; String^ descripcion; String^ marca; String^ cantidad; String^ fecha_ingreso;
 	st = gcnew SqlConnectionStringBuilder();
-	st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+	//st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
 	//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
-	//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
+	st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
 	st->InitialCatalog = "proteccionTotal";
 	st->IntegratedSecurity = true;
 	cn = gcnew SqlConnection(Convert::ToString(st));
@@ -386,6 +399,9 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	cn->Close();
 
+}
+private: System::Void Regreso_Click(System::Object^ sender, System::EventArgs^ e) {
+	Add_arti::Close();
 }
 };
 }
