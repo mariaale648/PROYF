@@ -541,8 +541,8 @@ namespace PROYF {
 		SqlConnectionStringBuilder^ st;
 		String^ nombres; String^ apellidos; String^ estado_civil; String^ dpi; String^ direccion; String^ edad; String^ id_puesto; String^ id_posicion;
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-		//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+		//st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+		st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
 		//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
 		st->InitialCatalog = "proteccionTotal";
 		st->IntegratedSecurity = true;
@@ -554,6 +554,7 @@ namespace PROYF {
 		SqlDataReader^ reader = ejecutar->ExecuteReader();
 		// this->listView_Guardias->Items->Clear();
 		// this->listView_Guardias->Columns->Clear();
+		this->listView_Guardia->Items->Clear();
 		while (reader->Read()) {
 			id_posicion = (reader["id_posicion"]->ToString());
 			nombres = (reader[	"nombres"]->ToString());
@@ -605,8 +606,8 @@ private: System::Void button_actualizar_Click(System::Object^ sender, System::Ev
 		SqlConnectionStringBuilder^ st;
 		String^ id_posicion; String^ nombres; String^ apellidos; String^ estado_civil; String^ dpi; String^ direccion; String^ edad; String^ id_puesto;
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-		//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+		//st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+		st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
 		//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
 		st->InitialCatalog = "proteccionTotal";
 		st->IntegratedSecurity = true;
@@ -636,7 +637,7 @@ private: System::Void button_actualizar_Click(System::Object^ sender, System::Ev
 		EDAD_TXT->Text = "";
 		idPuesto_TXT->Text = "";
 
-		listView_Guardia->Clear();
+		
 	}
 }
 private: System::Void listView1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {

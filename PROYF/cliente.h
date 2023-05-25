@@ -303,8 +303,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	SqlConnectionStringBuilder^ st;
 	String^ nombre_empresa; String^ nit; String^ id_cliente;
 	st = gcnew SqlConnectionStringBuilder();
-	st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-	//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+	//st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+	st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
 	//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
 	st->InitialCatalog = "proteccionTotal";
 	st->IntegratedSecurity = true;
@@ -314,6 +314,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
 	cn->Open();
 	SqlDataReader^ reader = ejecutar->ExecuteReader();
+	this->listView_Cliente->Items->Clear();
 	while (reader->Read()) {
 		id_cliente = (reader["id_cliente"]->ToString());
 		nombre_empresa = (reader["nombre_empresa"]->ToString());
@@ -345,18 +346,18 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		SqlConnectionStringBuilder^ st;
 		String^ id_cliente; String^ nombre_empresa; String^ nit;
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-		//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+		//st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+		st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
 		//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
 		st->InitialCatalog = "proteccionTotal";
 		st->IntegratedSecurity = true;
 		cn = gcnew SqlConnection(Convert::ToString(st));
 
-		String^ sentencia = "update cliente set nombre_empresa=@nombre_empresa, nit=@nit where id_cliente=@id_cliente";
+		String^ sentencia = "update cliente set nombre_empresa=@nombre_empresa, nit=@nit where id_cliente=@id_cliente ";
 
 		SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
 		ejecutar->Parameters->AddWithValue("@id_cliente", Convert::ToInt64(textBox_id->Text));
-		ejecutar->Parameters->AddWithValue("@nombre_empresa", nombre_empre_TXT);
+		ejecutar->Parameters->AddWithValue("@nombre_empresa", nombre_empre_TXT->Text);
 		ejecutar->Parameters->AddWithValue("@nit", NIT_TXT->Text);
 		cn->Open();
 		ejecutar->ExecuteNonQuery();
@@ -365,7 +366,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		textBox_id->Text = "";
 		nombre_empre_TXT->Text = "";
 		NIT_TXT->Text = "";
-		listView_Cliente->Clear();
+		
 	}
 }
 private: System::Void nombre_empre_TXT_TextChanged(System::Object^ sender, System::EventArgs^ e) {

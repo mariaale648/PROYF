@@ -432,8 +432,8 @@ namespace PROYF {
 		SqlConnectionStringBuilder^ st;
 		String^ nombre; String^ direccion; String^ id_distrito; String^ id_cliente; String^ id_tpuesto; String^ lugar_entrega; String^ hora_entrega; String^ id_puesto;
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-		//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+		//st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+		st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
 		//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
 		st->InitialCatalog = "proteccionTotal";
 		st->IntegratedSecurity = true;
@@ -443,6 +443,7 @@ namespace PROYF {
 		SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
 		cn->Open();
 		SqlDataReader^ reader = ejecutar->ExecuteReader();
+		this->listView_Puesto->Items->Clear();
 		while (reader->Read()) {
 			id_puesto = (reader["id_puesto"]->ToString());
 			nombre = (reader["nombre"]->ToString());
@@ -508,8 +509,8 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		SqlConnectionStringBuilder^ st;
 		String^ id_puesto; String^ nombre; String^ direccion; String^ id_distrito; String^ id_cliente; String^ id_tpuesto; String^ lugar_entregaa; String^ hora_entrega;
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-		//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+		//st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+		st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
 		//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
 		st->InitialCatalog = "proteccionTotal";
 		st->IntegratedSecurity = true;
@@ -518,14 +519,14 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		String^ sentencia = "update puesto set nombre=@nombre, direccion=@direccion, id_distrito=@id_distrito, id_cliente=@id_cliente, lugar_entrega=@lugar_entrega, hora_entrega=@hora_entrega where id_puesto=@id_puesto";
 
 		SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
-		ejecutar->Parameters->AddWithValue("@id_articulo", Convert::ToInt64(textBox_id->Text));
+		ejecutar->Parameters->AddWithValue("@id_puesto", Convert::ToInt64(textBox_id->Text));
 		ejecutar->Parameters->AddWithValue("@nombre", N_puesto_TXT->Text);
 		ejecutar->Parameters->AddWithValue("@direccion", dire_txt->Text);
 		ejecutar->Parameters->AddWithValue("@id_distrito", id_distrito_txt->Text);
 		ejecutar->Parameters->AddWithValue("@id_cliente", idCliente_txt->Text);
 		ejecutar->Parameters->AddWithValue("@id_tpuesto", idTpuesto_txt->Text);
 		ejecutar->Parameters->AddWithValue("@lugar_entrega", LEntrega_txt->Text);
-		ejecutar->Parameters->AddWithValue("@lugar_entrega", Hora_txt->Text);
+		ejecutar->Parameters->AddWithValue("@hora_entrega", Hora_txt->Text);
 		cn->Open();
 		ejecutar->ExecuteNonQuery();
 		cn->Close();
@@ -538,7 +539,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		idTpuesto_txt->Text = "";
 		LEntrega_txt->Text = "";
 		Hora_txt->Text = "";
-		listView_Puesto->Clear();
+		
 	}
 }
 };

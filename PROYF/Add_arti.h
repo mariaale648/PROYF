@@ -442,8 +442,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	SqlConnectionStringBuilder^ st;
 	String^ nombre_art; String^ descripcion; String^ marca; String^ cantidad; String^ fecha_ingreso; String^ id_articulo;
 	st = gcnew SqlConnectionStringBuilder();
-	st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-	//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+	//st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+	st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
 	//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
 	st->InitialCatalog = "proteccionTotal";
 	st->IntegratedSecurity = true;
