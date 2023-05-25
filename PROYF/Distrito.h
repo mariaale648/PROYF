@@ -263,9 +263,9 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	SqlConnectionStringBuilder^ st;
 	String^ nombre_distrito; String^ id_distrito;
 	st = gcnew SqlConnectionStringBuilder();
-	st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-	//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
-	//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
+	//st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+	st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+	//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (Alejandra)
 	st->InitialCatalog = "proteccionTotal";
 	st->IntegratedSecurity = true;
 	cn = gcnew SqlConnection(Convert::ToString(st));
@@ -274,6 +274,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
 	cn->Open();
 	SqlDataReader^ reader = ejecutar->ExecuteReader();
+	this->listView_Distrito->Items->Clear();
 	while (reader->Read())
 	{
 		id_distrito = (reader["id_distrito"]->ToString());
@@ -307,9 +308,9 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		SqlConnectionStringBuilder^ st;
 		String^ id_distrito; String^ nombre_distrito;
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-		//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
-		//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
+		//st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+		st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+		//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (Alejandra)
 		st->InitialCatalog = "proteccionTotal";
 		st->IntegratedSecurity = true;
 		cn = gcnew SqlConnection(Convert::ToString(st));
@@ -325,7 +326,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		MessageBox::Show("Registro actualizado");
 		textBox_id->Text = "";
 		nombre_distr->Text = "";
-		listView_Distrito->Clear();
+
 	}
 }
 };
