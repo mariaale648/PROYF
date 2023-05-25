@@ -92,7 +92,7 @@ namespace PROYF {
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->button1->Location = System::Drawing::Point(43, 156);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(120, 40);
 			this->button1->TabIndex = 2;
@@ -104,11 +104,11 @@ namespace PROYF {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->ClientSize = System::Drawing::Size(444, 277);
+			this->ClientSize = System::Drawing::Size(896, 348);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Asignar_guardia";
 			this->Text = L"Asignar_guardia";
 			this->ResumeLayout(false);

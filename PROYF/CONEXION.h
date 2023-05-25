@@ -17,8 +17,8 @@ ref class Conexion {
 protected:
     void Conectar() {
         st = gcnew SqlConnectionStringBuilder();        
-        //st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-        st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+        st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+        //st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
         //st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
         st->InitialCatalog = "proteccionTotal";
         st->IntegratedSecurity = true;
@@ -46,6 +46,7 @@ public:
         Conectar();
         String^ sentencia = "Insert into almacen values(@nombre_art, @descripcion, @marca, @cantidad, @fecha_ingreso)";
         SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
+        //ejecutar->Parameters->AddWithValue("@id_articulo", id_articulo);
         ejecutar->Parameters->AddWithValue("@nombre_art", nombre_art);
         ejecutar->Parameters->AddWithValue("@descripcion", descripcion);
         ejecutar->Parameters->AddWithValue("@marca", marca);

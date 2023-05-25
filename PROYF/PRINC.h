@@ -240,7 +240,7 @@ private: System::Void Agregar_inv_button_Click(System::Object^ sender, System::E
 }
 private: System::Void Asignar_art_button_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Visible = false;
-	Asignar_art^ f = gcnew Asignar_art();
+	Crear_guardia^ f = gcnew Crear_guardia();
 	f->ShowDialog();
 	this->Visible = true;
 }
