@@ -311,6 +311,7 @@ private: System::Void Cons_button_Click(System::Object^ sender, System::EventArg
 	SqlCommand^ ejecutar = gcnew SqlCommand(sentencia, cn);
 	cn->Open();
 	SqlDataReader^ reader = ejecutar->ExecuteReader();
+	this->listView_Guardia->Items->Clear();
 	while (reader->Read()) {
 		id_guardia = (reader["id_guardia"]->ToString());
 		id_posicon = (reader["id_posicon"]->ToString());
@@ -355,7 +356,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		textBox_id->Text = "";
 		id_posición_TXT->Text = "";
 		id_art_TXT->Text = "";
-		listView_Guardia->Clear();
+		
 	}
 }
 };
