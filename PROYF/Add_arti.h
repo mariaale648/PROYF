@@ -442,8 +442,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	SqlConnectionStringBuilder^ st;
 	String^ nombre_art; String^ descripcion; String^ marca; String^ cantidad; String^ fecha_ingreso; String^ id_articulo;
 	st = gcnew SqlConnectionStringBuilder();
-	st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-	//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+	//st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+	st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
 	//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
 	st->InitialCatalog = "proteccionTotal";
 	st->IntegratedSecurity = true;
@@ -454,6 +454,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	this->listView_Articulo->Refresh();
 	cn->Open();
 	SqlDataReader^ reader = ejecutar->ExecuteReader();
+	this->listView_Articulo->Items->Clear();
 	while (reader->Read()) {
 		id_articulo = (reader["id_articulo"]->ToString());
 		nombre_art = (reader["nombre_art"]->ToString());
@@ -491,8 +492,8 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		SqlConnectionStringBuilder^ st;
 		String^ nombre_art; String^ descripcion; String^ marca; String^ cantidad;
 		st = gcnew SqlConnectionStringBuilder();
-		st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
-		//st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
+		//st->DataSource = "LAPTOP-C78Q6N2B\\SQLEXPRESS20"; // (ANTONY)
+		st->DataSource = "DESKTOP-8UHRS07\\SQLEXPRESS"; //(KEVIN)
 		//st->DataSource = "VICTUSMARIO\\SQLEXPRESS";  // (MABEL)
 		st->InitialCatalog = "proteccionTotal";
 		st->IntegratedSecurity = true;
@@ -515,7 +516,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		desc_txt->Text = "";
 		Proveedor_txt->Text = "";
 		Cantidad_txt->Text = "";
-		listView_Articulo->Clear();
+		
 	}
 }
 private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
